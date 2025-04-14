@@ -52,7 +52,6 @@ idade = 15;
 System.out.println(idade);
 ```
 
-<codapi-snippet sandbox="java" editor="basic"></codapi-snippet>
 
 Por fim, podemos utilizar o valor de uma variável para algum outro propósito, como alterar ou definir uma segunda variável. O código a seguir cria uma variável chamada idadeNoAnoQueVem com valor de idade **mais um.**
 
@@ -107,7 +106,6 @@ char letra = 'a';
 System.out.println(letra);
 ```
 
-<codapi-snippet sandbox="java" editor="basic"></codapi-snippet>
 
 Variáveis do tipo `char` são pouco usadas no dia a dia Veremos mais a frente o uso das Strings, que usamos constantemente, porém estas não são definidas por um tipo primitivo.
 
@@ -144,7 +142,6 @@ if (idade < 18) {
 }
 ```
 
-<codapi-snippet sandbox="java" editor="basic"></codapi-snippet>
 
 Além disso, você pode usar a cláusula else para indicar o comportamento que deve ser executado no caso da expressão booleana ser falsa:
 ```java
@@ -156,7 +153,6 @@ if (idade < 18) {
 }
 ```
 
-<codapi-snippet sandbox="java" editor="basic"></codapi-snippet>
 
 Você pode concatenar expressões booleanas através dos operadores lógicos "E" e "OU". O "E" é representado pelo `&&` e o "OU" é representado pelo `||`.
 
@@ -172,7 +168,6 @@ else {
 }
 ```
 
-<codapi-snippet sandbox="java" editor="basic"></codapi-snippet>
 
 Esse código poderia ficar ainda mais legível, utilizando-se o operador de negação, o `!`. Esse operador transforma o resultado de uma expressão `booleana` de `false` para `true` e vice versa.
 
@@ -434,7 +429,6 @@ int[] numeros = new int[]{100 ,87};
 int[] numeros = {100 ,87};
 ```
 
-<codapi-snippet sandbox="java" editor="basic"></codapi-snippet>
 
 
 ### Acessando o conteúdo de um array
@@ -448,7 +442,6 @@ System.out.println(numeros[0]);
 System.out.println(numeros[1]);
 ```
 
-<codapi-snippet sandbox="java" editor="basic"></codapi-snippet>
 
 
 ### Percorrendo um Array
