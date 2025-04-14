@@ -10,6 +10,59 @@ star: true
 ---
 # Montando Ambiente de trabalho
 
+## Windows Scoop
+
+
+[Scoop](https://scoop.sh/) é um gerenciador de pacotes para Windows. Ele permite instalar e gerenciar softwares de forma eficiente, semelhante ao apt no Linux ou ao Homebrew no macOS.  Scoop simplifica a instalação de aplicativos, ferramentas de desenvolvimento e utilitários, automatizando o processo de download, instalação e atualização.  Ele oferece uma interface de linha de comando e integra-se bem com o PowerShell.  Usando Scoop, você pode instalar softwares de fontes confiáveis, mantendo seu sistema atualizado e organizado.
+
+Para instalar o scoop abra o PowerShell e rode o seguinte comando:
+
+```console
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+```
+Para instalar o scoop abra o PowerShell e rode o seguinte comando:
+
+
+```console
+scoop bucket add main
+scoop install main/git
+scoop install main/gh
+scoop bucket add java
+scoop install java/temurin-lts-jdk
+scoop install main/maven
+scoop bucket add extras
+scoop install extras/scene-builder
+scoop install extras/vscode
+```
+
+
+## Linux SDKman
+
+O [SDKMAN!](https://sdkman.io/) (Software Development Kit Manager) é um gerenciador de kits de desenvolvimento de software (SDKs) para várias linguagens de programação, como Java, Groovy, Kotlin, Scala e muitas outras. Ele permite que você instale, gerencie e alterne entre diferentes versões de SDKs de forma fácil e eficiente, tudo através da linha de comando.  
+
+para instalar
+
+```console
+curl -s "https://get.sdkman.io" | bash
+```
+
+## gh
+
+
+GitHub CLI (gh) é uma ferramenta de linha de comando oficial do GitHub que permite  interagir com repositórios, pull requests, issues e outros recursos do GitHub diretamente do terminal, simplificando o fluxo de trabalho de desenvolvimento.
+
+Para efetuar login no github
+```console
+gh auth login
+```
+Siga as instruções do terminal e acesse o link de autorização
+
+ao ternimar usa interação com o github, efeute o logout
+
+```console  
+gh auth logout
+```
 
 
 # SW utilizados
@@ -49,43 +102,5 @@ star: true
 
 - [Java 20 turbina a JVM [Cortes do Compilado]](https://youtu.be/vX4ttJ5BDNk)
 - [Java no YouTube](https://www.youtube.com/@java)
-
-
-## Windows Scoop
-
-
-[Scoop](https://scoop.sh/) é um gerenciador de pacotes para Windows. Ele permite instalar e gerenciar softwares de forma eficiente, semelhante ao apt no Linux ou ao Homebrew no macOS.  Scoop simplifica a instalação de aplicativos, ferramentas de desenvolvimento e utilitários, automatizando o processo de download, instalação e atualização.  Ele oferece uma interface de linha de comando e integra-se bem com o PowerShell.  Usando Scoop, você pode instalar softwares de fontes confiáveis, mantendo seu sistema atualizado e organizado.
-
-Para instalar o scoop abra o PowerShell e rode o seguinte comando:
-
-```console
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
-```
-Para instalar o scoop abra o PowerShell e rode o seguinte comando:
-
-
-```console
-scoop bucket add main
-scoop install main/git
-scoop install main/gh
-scoop bucket add java
-scoop install java/temurin-lts-jdk
-scoop install main/maven
-scoop bucket add extras
-scoop install extras/scene-builder
-scoop install extras/vscode
-```
-
-
-## Linux SDKman
-
-O [SDKMAN!](https://sdkman.io/) (Software Development Kit Manager) é um gerenciador de kits de desenvolvimento de software (SDKs) para várias linguagens de programação, como Java, Groovy, Kotlin, Scala e muitas outras. Ele permite que você instale, gerencie e alterne entre diferentes versões de SDKs de forma fácil e eficiente, tudo através da linha de comando.  
-
-para instalar
-
-```console
-curl -s "https://get.sdkman.io" | bash
-```
 
 
