@@ -10,6 +10,14 @@ star: true
 ---
 # Montando Ambiente de trabalho
 
+## Github
+
+O [GitHub](https://github.com/) é uma plataforma de hospedagem de código-fonte e controle de versão que utiliza o Git. Ele permite que desenvolvedores colaborem em projetos, gerenciem versões de código, criem repositórios públicos ou privados e utilizem ferramentas de integração contínua. É amplamente utilizado para compartilhar projetos de código aberto e colaborar em equipes de desenvolvimento.
+
+Para começar a usar o GitHub, você pode instalar o [GitHub CLI (gh)](https://cli.github.com/) ou o [GitHub Desktop](https://desktop.github.com/) para facilitar o gerenciamento de repositórios diretamente do seu computador.
+
+
+
 ## Windows Scoop
 
 
