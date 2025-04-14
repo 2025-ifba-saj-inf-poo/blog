@@ -64,7 +64,9 @@ n n*2 n*3 .... n*n
 ```
 ## Entrega
 
-[Link](https://classroom.github.com/a/3nbbtBOR)
+- [Link 2A](https://classroom.github.com/a/HcvwpIWD)
+
+- [Link 2B](https://classroom.github.com/a/yEsUjPY0)
 
 
 <!-- @include: ../../../includes/bib.md -->
