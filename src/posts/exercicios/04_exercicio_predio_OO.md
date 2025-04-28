@@ -16,6 +16,3 @@ order: 4
     - Cada andar do prédio pode ter uma quantidade de salas diferentes.
     - Cada sala pode ter um tamanho diferente.
 
-## Exemplo
-
-[Link repositório](https://github.com/20242-ifba-saj-ads-poo/javafx-predio)

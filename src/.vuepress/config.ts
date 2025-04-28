@@ -38,7 +38,7 @@ export default defineUserConfig({
     md.use(umlPlugin, {
       openMarker: '```plantuml', 
       closeMarker: '```',
-      server: 'https://kroki.io/plantuml/'
+      //server: 'https://kroki.io/plantuml/'
     })
     md.use(table_captions)
   },

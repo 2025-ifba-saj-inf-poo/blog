@@ -38,6 +38,3 @@ data1.posterior(data2): true
 data1.igual(data2): false
 ```
 
-## Link para Entrega
-
-[Entrega](https://classroom.github.com/a/wZnc-6bW)
