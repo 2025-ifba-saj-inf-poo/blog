@@ -1,6 +1,6 @@
 ---
 icon: edit
-date: 2025-04-21 8:00:00.00 -3
+date: 2025-04-28 8:00:00.00 -3
 tag:
   - java
   - objeto
@@ -17,7 +17,7 @@ order: 5
 
 Paradigmas de Programação são abordagens ou estilos diferentes de escrever código para resolver problemas. 
 
-A programação estruturada divide o código em estruturas para armazenar dados e funções que executam tarefas específicas. Ela normalmente é indicacda para problemas menores e menos complexos. 
+A programação estruturada divide o código em estruturas para armazenar dados e funções que executam tarefas específicas. Ela normalmente é indicada para problemas menores e menos complexos. 
 
 Na POO, o código é organizado em objetos que representam entidades do mundo real, com atributos e métodos relacionados. Isso permite a modelagem de problemas complexos de forma mais intuitiva e promove a reutilização de código.
 
@@ -571,9 +571,6 @@ System.out.println(person);//Escreve Pessoa{nome='Alice', idade=30} no console
 - [Exercício Prédio Estruturado](exercicios/03_exercicio_predio_estruturado.md)
 - [Exercício Prédio OO](exercicios/04_exercicio_predio_OO.md)
 - [Exercício Data OO](exercicios/05_exercicio_data_OO.md)
-- [Exercício Modelagem Carro](exercicios/06_exercicio_modelagem_carro.md)
-- [Exercício Modelagem TV](exercicios/07_exercicio_modelagem_tv.md)
-- [Exercício Modelagem DVD](exercicios/08_exercicio_modelagem_dvd.md)
 
 
 ## Referências
