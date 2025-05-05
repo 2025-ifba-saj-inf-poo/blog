@@ -292,8 +292,8 @@ class Conta{
   double limite;
 
   void saca(double quantidade){//método
-    double novoSaldo = this.saldo - quantidade;
-    this.saldo = novoSaldo;
+    double novoSaldo = saldo - quantidade;
+    saldo = novoSaldo;
   }
 }
 ```
@@ -307,12 +307,12 @@ class Conta{
   double limite;
 
   void saca(double quantidade){//método
-    double novoSaldo = this.saldo - quantidade;
-    this.saldo = novoSaldo;
+    double novoSaldo = saldo - quantidade;
+    saldo = novoSaldo;
   }
 
   void deposita(double quantidade){//método
-    this.saldo += quantidade;
+    saldo += quantidade;
   }
 }
 ```
@@ -347,10 +347,10 @@ class Conta{
   //...
 
   boolean saca(double valor){
-    if(this.saldo<valor){
+    if(saldo<valor){
       return false;
     }else{
-      this.saldo -= valor;
+      saldo -= valor;
       return true;
     }
   }
@@ -471,7 +471,7 @@ return sucesso
 
 ```java
 void transferir(Conta destino, double quantidade){
-  if(this.saca(quantidade)){
+  if(saca(quantidade)){
     destino.deposita(quantidade);
   }   
 }
@@ -521,7 +521,7 @@ public static void main(String args[]) {
 class Conta {
   //...
   public boolean equals(Conta outraConta) {
-    return this.numero == outraConta.numero;
+    return numero == outraConta.numero;
   }
   //...
   
@@ -543,8 +543,8 @@ public class Pessoa {
     private int idade;
 
     public Pessoa(String nome, int idade) {
-        this.nome = nome;
-        this.idade = idade;
+        nome = nome;
+        idade = idade;
     }
 
     @Override
@@ -568,7 +568,6 @@ System.out.println(person);//Escreve Pessoa{nome='Alice', idade=30} no console
 
 ## Exercícios
 
-- [Exercício Prédio Estruturado](exercicios/03_exercicio_predio_estruturado.md)
 - [Exercício Prédio OO](exercicios/04_exercicio_predio_OO.md)
 - [Exercício Data OO](exercicios/05_exercicio_data_OO.md)
 
