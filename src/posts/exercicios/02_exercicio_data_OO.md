@@ -5,8 +5,7 @@ tag:
   - java
 category:
   - exercicio
-  - entrega
-order: 5
+order: 3
 ---
 
 # Exercício: Data OO

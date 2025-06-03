@@ -1,6 +1,6 @@
 ---
 icon: edit
-date: 2025-04-28 8:00:00.00 -3
+date: 2025-04-19 8:00:00.00 -3
 tag:
   - java
   - objeto
@@ -282,7 +282,10 @@ class Conta{
   - Os objetos se comunicam através de métodos
   - Troca de mensagens
 
-- Um método que saca uma determinada quantidade e não devolve nenhuma informação para quem acionar esse método
+## Métodos sem retorno
+
+- Um método que saca uma determinada quantidade e devolve nenhuma informação para quem acionar esse método
+
 
 ```java{7-10}
 class Conta{
@@ -298,7 +301,8 @@ class Conta{
 }
 ```
 
- - Fazer um depósito
+- Fazer um depósito
+
 ```java{7-10,12-14}
 class Conta{
   int numero;
@@ -317,29 +321,12 @@ class Conta{
 }
 ```
 
-
-```java
-class Programa{
-  public static void main(String[] args){
-    Conta minhaConta;
-    minhaConta = new Conta();
-
-    minhaConta.cliente = "Leandro";
-    minhaConta.saldo = 100.0;
-
-    //saca 20
-    minhaConta.saca(20);
-    //deposita 50
-    minhaConta.deposita(50);
-
-    System.out.println("Saldo atual: "+minhaConta.saldo);
-  }
-}
-```
+@[code](./code/objeto/Programa.java)
 
 
-- Método com retorno
-  - No caso do nosso método saca, podemos devolver um valor booleano indicando se a operação foi bem sucedida.
+## Método com retorno
+
+- No caso do nosso método saca, podemos devolver um valor booleano indicando se a operação foi bem sucedida.
 
 
 ```java
@@ -531,11 +518,11 @@ class Conta {
 
 ### toString
 
-O método `toString()` em Java é um método ~~da classe Object~~ que retorna uma representação em formato de string do objeto em questão.
+O método `toString()` em Java é um método da classe Object (falaremos de herança mais para frente) que retorna uma representação em formato de string do objeto em questão.
 
 Se uma classe em Java deseja ter sua própria representação em formato de string, ela pode sobrescrever esse método e fornecer uma implementação personalizada. A implementação sobrescrita deve retornar uma string que descreva o objeto de uma forma útil e significativa para o usuário.
 
-Por exemplo, a seguinte classe `Pessoa` sobrescreve o método toString() para fornecer uma representação personalizada de uma pessoa:
+Por exemplo, a seguinte classe `Pessoa` sobrescreve (falaremos de herança mais para frente) o método toString() para fornecer uma representação personalizada de uma pessoa:
 
 ```java
 public class Pessoa {
@@ -568,8 +555,8 @@ System.out.println(person);//Escreve Pessoa{nome='Alice', idade=30} no console
 
 ## Exercícios
 
-- [Exercício Prédio OO](exercicios/04_exercicio_predio_OO.md)
-- [Exercício Data OO](exercicios/05_exercicio_data_OO.md)
+- [Exercício Data OO](exercicios/02_exercicio_data_OO.md)
+- [Exercício Modelagem Carro](exercicios/03_exercicio_modelagem_carro.md)
 
 
 ## Referências
