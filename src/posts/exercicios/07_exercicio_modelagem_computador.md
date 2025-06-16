@@ -5,7 +5,7 @@ tag:
   - java
 category:
   - exercicio
-order: 9
+order: 8
 ---
 
 # Exercício: Modelagem Computador

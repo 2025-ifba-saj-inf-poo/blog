@@ -7,7 +7,7 @@ tag:
   - classe
 category:
   - aula
-order: 5
+order: 4
 ---
 
 # Programação Orientada a Objetos

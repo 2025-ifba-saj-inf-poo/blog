@@ -5,7 +5,7 @@ tag:
   - java
 category:
   - exercicio
-order: 7
+order: 5
 ---
 
 # Exercício: Modelagem TV

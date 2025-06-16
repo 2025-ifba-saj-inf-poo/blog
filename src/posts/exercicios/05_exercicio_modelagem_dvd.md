@@ -5,7 +5,7 @@ tag:
   - java
 category:
   - exercicio
-xorder: 8
+order: 6
 ---
 
 # Exercício: Modelagem DVD
@@ -28,8 +28,9 @@ adaptado de [^Takenami]
     - Só é possível dar stop se o Aparelho de DVD estiver em play;
     - Ao dar play deve aparecer o nome e a duração do filme que está sendo exibido.
 
-1. Escreva o diagrama UML da classe Aparelho de DVD e implemente o código em Java para construir 1 Aparelho de DVD e 3 filmes diferentes, utilizando o construtor e os métodos definidos e inserir um filme no Aparelho de DVD.
+1. Escreva o diagrama UML da classe Aparelho de DVD e implemente o código em Java para construir 1 Aparelho de DVD e 3 filmes diferentes, utilizando o construtor e os métodos definidos e inserir um filme no Aparelho de DVD, ligar, dar play e remover o filme.
 
+<div style="display:none">
 
 ::: details 
 
@@ -58,6 +59,7 @@ adaptado de [^Takenami]
   @enduml
 
   ```
+
   </figure>
 
 
@@ -69,5 +71,6 @@ adaptado de [^Takenami]
 
 :::
 
+</div>
 
 <!-- @include: ../../../includes/bib.md -->

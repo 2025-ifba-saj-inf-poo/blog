@@ -6,7 +6,7 @@ tag:
 category:
   - exercicio
   - entrega
-order: 6
+order: 4
 ---
 
 # Exercício: Modelagem Carro
