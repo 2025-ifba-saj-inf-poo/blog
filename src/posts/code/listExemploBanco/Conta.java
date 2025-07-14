@@ -1,11 +1,11 @@
 
-public class Conta {
-    private int numero;
-    private String cliente;
-    private double saldo;
-    private double limite;
+class Conta {
+    int numero;
+    String cliente;
+    double saldo;
+    double limite;
 
-    public Conta(int numero, String cliente) {
+    Conta(int numero, String cliente) {
         if (numero < 0) {
             this.numero = 999;
         } else {
@@ -16,13 +16,13 @@ public class Conta {
         this.limite = 100;
     }
 
-    public Conta(int numero, String cliente, double saldo, double limite) {
+    Conta(int numero, String cliente, double saldo, double limite) {
         this(numero, cliente);
         this.saldo = saldo;
         this.limite = limite;
     }
 
-    public void setCliente(String cliente) {
+    void setCliente(String cliente) {
         if (cliente != null && !cliente.isEmpty() && !cliente.isBlank()) {
             this.cliente = cliente;
         }else{
@@ -30,7 +30,7 @@ public class Conta {
         }
     }
 
-    public boolean saca(double quantidade) {// método
+    boolean saca(double quantidade) {// método
         if (this.saldo < quantidade) {
             return false;
         } else {
@@ -39,11 +39,11 @@ public class Conta {
         }
     }
 
-    public void deposita(double quantidade) {// método
+    void deposita(double quantidade) {// método
         this.saldo += quantidade;
     }
 
-    public boolean transferir(Conta destino, double valor) {
+    boolean transferir(Conta destino, double valor) {
         if (this.saca(valor)) {
             destino.deposita(valor);
             return true;
@@ -51,11 +51,11 @@ public class Conta {
         return false;
     }
 
-    public double getSaldo() {
+    double getSaldo() {
         return saldo;
     }
 
-    public int getNumero() {
+    int getNumero() {
         return numero;
     }
 

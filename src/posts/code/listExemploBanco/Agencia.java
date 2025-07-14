@@ -3,20 +3,20 @@
 import java.util.ArrayList;
 
 
-public class Agencia {
-    private int numero;
-    private ArrayList<Conta> contas;
+class Agencia {
+    int numero;
+    ArrayList<Conta> contas;
     
-    public Agencia(int numero) {
+    Agencia(int numero) {
         this.numero = numero;
         contas = new ArrayList<>();
     }
     
-    public int getNumero() {
+    int getNumero() {
         return numero;
     }
 
-    public int criarConta(String cliente){
+    int criarConta(String cliente){
         //calcula o numero da nova conta
         int numeroConta = numero*100;
         numeroConta+= contas.size();
@@ -28,11 +28,11 @@ public class Agencia {
         return novConta.getNumero();
     }
 
-    public int totalContas() {
+    int totalContas() {
         return contas.size();
     }
 
-    public double totalDinheiro() {
+    double totalDinheiro() {
         double total = 0;
         for (int i = 0; i < contas.size(); i++) {
             total+= contas.get(i).getSaldo();
@@ -40,7 +40,7 @@ public class Agencia {
         }
         return total;
     }  
-    public Conta getConta(int numeroConta) {
+    Conta getConta(int numeroConta) {
         // buscar a conta que tem o numero igual a numeroConta
         for (int i = 0; i < contas.size(); i++) {
             Conta c = contas.get(i);
