@@ -1,5 +1,3 @@
-import br.edu.ifba.saj.ads.poo.sistemabanco.Agencia;
-import br.edu.ifba.saj.ads.poo.sistemabanco.Conta;
 
 public class App {
 

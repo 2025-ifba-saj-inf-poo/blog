@@ -5,6 +5,7 @@ tag:
   - java
 category:
   - exercicio
+  - entrega
 order: 9
 ---
 
@@ -18,6 +19,13 @@ Execute o código abaixo para criar um sistema bancário simples utilizando conc
 
 @[code](../code/listExemploBanco/App.java)
 
-após a execução, você deve realizar a entrega da tarefa (print da execução) no link abaixo:
+após a execução, você deve realizar a entrega da tarefa (**print da execução**) no link abaixo:
 
-[Entrega](https://classroom.github.com/a/o3PzeeVI)
+
+[Entrega 2B](https://classroom.github.com/a/M5JXI-BD)
+
+para a entrega do print, você pode utilizar você pode usar a ferramenta de captura de tela, salvar a imagem e enviar o arquivo no link acima.
+
+clique na opção de *upload an existing file* e selecione o arquivo que você salvou.
+
+![](../img/UploadFileGit.png)

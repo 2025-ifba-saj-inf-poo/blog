@@ -1,4 +1,4 @@
-package br.edu.ifba.saj.ads.poo.sistemabanco;
+
 public class Conta {
     private int numero;
     private String cliente;
@@ -53,6 +53,10 @@ public class Conta {
 
     public double getSaldo() {
         return saldo;
+    }
+
+    public int getNumero() {
+        return numero;
     }
 
     @Override

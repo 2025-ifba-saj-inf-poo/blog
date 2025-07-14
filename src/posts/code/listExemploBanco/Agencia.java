@@ -1,4 +1,4 @@
-package br.edu.ifba.saj.ads.poo.sistemabanco;
+
 
 import java.util.ArrayList;
 
@@ -16,7 +16,7 @@ public class Agencia {
         return numero;
     }
 
-    public Conta criarConta(String cliente){
+    public int criarConta(String cliente){
         //calcula o numero da nova conta
         int numeroConta = numero*100;
         numeroConta+= contas.size();
@@ -25,7 +25,7 @@ public class Agencia {
         //guardo nova conta na minha lista de contas
         contas.add(novConta);
         //devolvo a conta para quem pediu
-        return novConta;
+        return novConta.getNumero();
     }
 
     public int totalContas() {
