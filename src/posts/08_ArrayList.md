@@ -75,8 +75,10 @@ import java.util.Objects;
 
 class Aluno {
     private String nome;
+    private String matricula;
 
-    public Aluno(String nome) {
+    public Aluno(String matricula, String nome) {
+        this.matricula = matricula;
         this.nome = nome;
     }
 
@@ -85,18 +87,18 @@ class Aluno {
         if (this == obj) return true;
         if (!(obj instanceof Aluno)) return false;
         Aluno aluno = (Aluno) obj;
-        return Objects.equals(nome, aluno.nome);
+        return Objects.equals(matricula, aluno.matricula);
     }
 }
 
 public class TestandoListas {
     public static void main(String[] args) {
         List<Aluno> alunos = new ArrayList<>();
-        Aluno aluno1 = new Aluno("João");
-        Aluno aluno2 = new Aluno("Maria");
+        Aluno aluno1 = new Aluno("A1","João");
+        Aluno aluno2 = new Aluno("A2","Maria");
         alunos.add(aluno1);
         alunos.add(aluno2);
-        Aluno aluno3 = new Aluno("João");
+        Aluno aluno3 = new Aluno("A1","João");
         System.out.println(alunos.contains(aluno3)); // true, pois aluno3 é igual a aluno1
     }
 }
