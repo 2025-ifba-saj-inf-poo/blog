@@ -22,6 +22,8 @@ Execute o código abaixo para criar um sistema bancário simples utilizando conc
 após a execução, você deve realizar a entrega da tarefa (**print da execução**) no link abaixo:
 
 
+[Entrega 2A](https://classroom.github.com/a/Se2V0BCJ)
+
 [Entrega 2B](https://classroom.github.com/a/M5JXI-BD)
 
 para a entrega do print, você pode utilizar você pode usar a ferramenta de captura de tela, salvar a imagem e enviar o arquivo no link acima.
