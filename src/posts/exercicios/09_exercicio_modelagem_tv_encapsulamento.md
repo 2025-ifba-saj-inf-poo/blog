@@ -11,6 +11,8 @@ order: 9
 
 # Exercício Encapsulamento: Modelagem TV
 
+Data limite: 21/07/2025 as 23:59
+
 [^Takenami]
 
 1. Utilizando os conhecimentos de O.O.,  e os conceitos de encapsulamento,  construa um programa utilizando as informações abaixo. 

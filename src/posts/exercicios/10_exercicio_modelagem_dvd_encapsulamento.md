@@ -13,6 +13,8 @@ order: 10
 
 adaptado de [^Takenami]
 
+Data limite: 27/07/2025 as 23:59
+
 
 1. Utilizando os conhecimentos de O.O. e lembrando de encapsulamento, construa um programa utilizando as informações abaixo. As características de um Aparelho de DVD devem ser definidas de acordo com as informações a seguir. Ao ser criado o Aparelho de DVD inicialmente está desligado. Seu volume pode alterar de 1 a 5 sendo que o nível inicial é 2. É possível inserir um filme no Aparelho de DVD. O filme possui as seguintes caraterísticas: nome, categoria e duração. 
 
