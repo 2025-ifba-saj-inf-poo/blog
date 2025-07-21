@@ -412,4 +412,4 @@ class Programa{
 ## Exercícios
 
 - [Exercício Modelagem TV](./exercicios/09_exercicio_modelagem_tv_encapsulamento.md)
-- [Exercício Modelagem DVD](exercicios/10_exercicio_modelagem_dvd_encapsulamento.md
+- [Exercício Modelagem DVD](./exercicios/10_exercicio_modelagem_dvd_encapsulamento.md)
