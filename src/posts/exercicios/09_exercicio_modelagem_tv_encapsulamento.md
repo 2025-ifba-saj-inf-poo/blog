@@ -30,10 +30,10 @@ order: 9
 
 Entregue o código no repositório bem como o print da execução (print de toda a tela).
 
-Entrega 
 
-[2 B](https://classroom.github.com/a/HPbZHYVo)
+[Entrega 2A](https://classroom.github.com/a/dB3m5Shk)
 
-[2 A](https://classroom.github.com/a/dB3m5Shk)
+[Entrega 2B](https://classroom.github.com/a/HPbZHYVo)
+
 
 <!-- @include: ../../../includes/bib.md -->

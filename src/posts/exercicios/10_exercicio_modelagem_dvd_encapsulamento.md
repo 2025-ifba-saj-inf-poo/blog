@@ -32,7 +32,9 @@ adaptado de [^Takenami]
 Entregue o código no repositório bem como o print da execução (print de toda a tela).
 
 
+[Engrega 2A](https://classroom.github.com/a/3gIp8yJ-)
 
+[Entrega 2B](https://classroom.github.com/a/lmrrV2Fb)
 
 
 
