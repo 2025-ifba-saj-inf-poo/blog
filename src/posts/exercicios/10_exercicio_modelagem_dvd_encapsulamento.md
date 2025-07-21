@@ -6,7 +6,7 @@ tag:
 category:
   - exercicio
   - entrega
-order: 10
+order: 11
 ---
 
 # Exercício Encapsulamento: Modelagem DVD
@@ -38,6 +38,9 @@ Entregue o código no repositório bem como o print da execução (print de toda
 
 [Entrega 2B](https://classroom.github.com/a/lmrrV2Fb)
 
+clique na opção de *Add file* e depois *Upload file* e selecione o arquivo que você salvou.
+
+![](../img/AppfileUpload.png)
 
 
 <!-- @include: ../../../includes/bib.md -->
