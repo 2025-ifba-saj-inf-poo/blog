@@ -27,8 +27,10 @@ order: 9
     - aumentar e diminuir o volume;
     - subir e descer canal.
 
-Desenhe o diagrama UML da classe TV e implemente o código em Java para construir 3 televisões diferentes, utilizando o construtor e os métodos definidos.
+Entregue o código no repositório bem como o print da execução.
 
+Entrega 
 
+[2 B](https://classroom.github.com/a/HPbZHYVo)
 
 <!-- @include: ../../../includes/bib.md -->
