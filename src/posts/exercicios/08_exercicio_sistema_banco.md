@@ -30,4 +30,4 @@ para a entrega do print, você pode utilizar você pode usar a ferramenta de cap
 
 clique na opção de *upload an existing file* e selecione o arquivo que você salvou.
 
-![](../img/UploadFileGit.png)
+![Como fazer o upload](../img/UploadFileGit.png)

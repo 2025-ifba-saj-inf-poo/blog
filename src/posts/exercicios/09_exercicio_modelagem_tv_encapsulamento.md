@@ -38,8 +38,8 @@ Entregue o código no repositório bem como o print da execução (print de toda
 [Entrega 2B](https://classroom.github.com/a/HPbZHYVo)
 
 
-clique na opção de *Add file* e depois *Upload file* e selecione o arquivo que você salvou.
+clique na opção de *Add file* e depois *Upload files* e selecione o arquivo que você salvou.
 
-![](../img/AppfileUpload.png)
+![Como fazer o upload](../img/AppfileUpload.png)
 
 <!-- @include: ../../../includes/bib.md -->
