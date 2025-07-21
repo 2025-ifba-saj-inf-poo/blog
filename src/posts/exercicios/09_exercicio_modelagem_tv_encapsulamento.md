@@ -4,6 +4,7 @@ date: 2025-07-21 08:21:00.00 -3
 tag:
   - java
 category:
+  - entrega
   - exercicio
 order: 9
 ---
@@ -27,10 +28,12 @@ order: 9
     - aumentar e diminuir o volume;
     - subir e descer canal.
 
-Entregue o código no repositório bem como o print da execução.
+Entregue o código no repositório bem como o print da execução (print de toda a tela).
 
 Entrega 
 
 [2 B](https://classroom.github.com/a/HPbZHYVo)
+
+[2 A](https://classroom.github.com/a/dB3m5Shk)
 
 <!-- @include: ../../../includes/bib.md -->

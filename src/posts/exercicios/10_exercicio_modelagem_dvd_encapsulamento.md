@@ -5,6 +5,7 @@ tag:
   - java
 category:
   - exercicio
+  - entrega
 order: 10
 ---
 
@@ -28,7 +29,11 @@ adaptado de [^Takenami]
     - Só é possível dar stop se o Aparelho de DVD estiver em play;
     - Ao dar play deve aparecer o nome e a duração do filme que está sendo exibido.
 
-1. Escreva o diagrama UML da classe Aparelho de DVD e implemente o código em Java para construir 1 Aparelho de DVD e 3 filmes diferentes, utilizando o construtor e os métodos definidos e inserir um filme no Aparelho de DVD, ligar, dar play e remover o filme.
+Entregue o código no repositório bem como o print da execução (print de toda a tela).
+
+
+
+
 
 
 <!-- @include: ../../../includes/bib.md -->
