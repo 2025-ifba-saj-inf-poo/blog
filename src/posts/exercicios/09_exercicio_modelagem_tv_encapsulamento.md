@@ -5,7 +5,7 @@ tag:
   - java
 category:
   - exercicio
-order: 5
+order: 9
 ---
 
 # Exercício Encapsulamento: Modelagem TV
