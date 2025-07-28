@@ -63,12 +63,6 @@ adaptado de [^Takenami]
   </figure>
 
 
-  @[code](../code/modelagemDVD/DVD.java)
-
-  @[code](../code/modelagemDVD/Filme.java)
-
-  @[code](../code/modelagemDVD/Mesa.java)
-
 :::
 
 </div>

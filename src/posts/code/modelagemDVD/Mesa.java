@@ -1,5 +1,8 @@
 package modelagemDVD;
 
+import modelagemDVD.estante.AparelhoDVD;
+import modelagemDVD.estante.Filme;
+
 public class Mesa {
     public static void main(String[] args) {
         AparelhoDVD meuDVD = new AparelhoDVD();
