@@ -106,3 +106,7 @@ Neste exercício:
 
 [2A](https://classroom.github.com/a/OYupSAp4)
 [2B](https://classroom.github.com/a/-bbliGIv)
+
+## Referencias
+
+<!-- @include: ../../../includes/bib.md -->

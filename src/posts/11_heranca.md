@@ -497,184 +497,6 @@ label "contratante\nresponsavel\ndataDeContratacao" #aliceblue;text:blue
 
 @[code](./code/heranca/Emprestimo.java)
 
-
-## Sobrescrita de Métodos
-
-### Caelum
-
-[^caelumoo]
-
-Todo fim de ano, os funcionários do nosso banco recebem uma bonificação. Os funcionários comuns recebem 10% do valor do salário e os gerentes, 15%.
-
-Vamos ver como fica a classe Funcionario:
-
-```java
-class Funcionario {
-    protected String nome;
-    protected String cpf;
-    protected double salario;
-    public double getBonificacao() {
-        return this.salario * 0.10;
-    }
-    // métodos
-}
-```
-
-Se deixarmos a classe `Gerente` como ela está, ela vai herdar o método `getBonificacao`.
-
-```java
-Gerente gerente = new Gerente();
-gerente.setSalario(5000.0);
-IO.println(gerente.getBonificacao());
-```
-
-O resultado aqui será `500`. Não queremos essa resposta, pois o gerente deveria ter `750` de bônus nesse caso. Para consertar isso, uma das opções seria criar um novo método na classe Gerente, chamado, por exemplo, `getBonificacaoDoGerente`. O problema é que teríamos dois métodos em Gerente, confundindo bastante quem for usar essa classe, além de que cada um da uma resposta diferente.
-
-No Java, quando herdamos um método, podemos alterar seu comportamento. Podemos reescrever (reescrever, sobrescrever, override) este método:
-
-```java
-class Gerente extends Funcionario {
-    int senha;
-    int numeroDeFuncionariosGerenciados;
-    public double getBonificacao() {
-        return this.salario * 0.15;
-    }
-    // ...
-}
-```
-
-Agora o método está correto para o `Gerente`. Refaça o teste e veja que o valor impresso é o correto `750`:
-```java
-Gerente gerente = new Gerente();
-gerente.setSalario(5000.0);
-IO.println(gerente.getBonificacao());
-```
-
-:::tip  A anotação @Override
-Há como deixar explícito no seu código que determinador método é a reescrita de um método da sua classe mãe. Fazemos isso colocando `@Override` em cima do método. Isso é chamado **anotação**. Existem diversas anotações e cada uma vai ter um efeito diferente sobre seu código.
-
-```java
-@Override
-public double getBonificacao() {
-    return this.salario * 0.15;
-}
-```
-
-Perceba que, por questões de compatibilidade, isso não é obrigatório. Mas caso um método esteja anotado com `@Override`, ele necessariamente precisa estar reescrevendo um método da classe mãe.
-:::
-
-#### Invocando o método reescrito
-Depois de reescrito, não podemos mais chamar o método antigo que fora herdado da classe mãe: realmente alteramos o seu comportamento. Mas podemos invocá-lo no caso de estarmos dentro da classe.
-
-Imagine que para calcular a bonificação de um Gerente devemos fazer igual ao cálculo de um `Funcionario` porem adicionando R$ 1000. Poderíamos fazer assim:
-```java
-class Gerente extends Funcionario {
-    int senha;
-    int numeroDeFuncionariosGerenciados;
-    public double getBonificacao() {
-        return this.salario * 0.10 + 1000;
-    }
-    // ...
-}
-```
-
-Aqui teríamos um problema: o dia que o `getBonificacao` do `Funcionario` mudar, precisaremos mudar o método do `Gerente` para acompanhar a nova bonificação. Para evitar isso, o `getBonificacao` do `Gerente` pode chamar o do `Funcionario` utilizando a palavra chave **super**.
-
-```java
-class Gerente extends Funcionario {
-    int senha;
-    int numeroDeFuncionariosGerenciados;
-    public double getBonificacao() {
-        return super.getBonificacao() + 1000;
-    }
-    // ...
-}
-```
-
-Essa invocação vai procurar o método com o nome `getBonificacao` de uma super classe de `Gerente`. No caso ele logo vai encontrar esse método em `Funcionario`.
-
-Essa é uma prática comum, pois muitos casos o método reescrito geralmente faz "algo a mais" que o método da classe mãe. Chamar ou não o método de cima é uma decisão sua e depende do seu problema. Algumas vezes não faz sentido invocar o método que reescrevemos.
-
-### K19
-
-[^k19oo]
-
-Suponha que o valor da taxa administrativa do serviço de empréstimo é diferente dos outros serviços, pois ele é calculado a partir do valor emprestado ao cliente. Como esta lógica é específica para o serviço de empréstimo, devemos acrescentar um método para implementar esse cálculo na classe `Emprestimo`.
-```java
-class Emprestimo extends Servico {
-    // ATRIBUTOS
-    public double calculaTaxaDeEmprestimo(){
-        return this.valor * 0.1;
-    }
-}
-```
-
-Para os objetos da classe `Emprestimo`, devemos chamar o método `calculaTaxaDeEmprestimo()`.
-Para todos os outros serviços, devemos chamar o método `calculaTaxa()`.
-
-Mesmo assim, nada impediria que o método `calculaTaxa()` fosse chamado em um objeto da
-classe `Emprestimo`, pois ela herda esse método da classe `Servico`. Dessa forma, existe o risco de alguém erroneamente chamar o método incorreto.
-
-Seria mais seguro "substituir" a implementação do método `calculaTaxa()` herdado da classe
-`Servico` na classe `Emprestimo`. Para isso, basta escrever o método `calculaTaxa()` também na classe `Emprestimo` com a mesma assinatura que ele possui na classe `Servico`.
-```java
-class Emprestimo extends Servico {
-    // ATRIBUTOS
-    public double calculaTaxa(){
-        return this.valor * 0.1;
-    }
-}
-```
-
-Os métodos das classes específicas têm prioridade sobre os métodos das classes genéricas. Em outras palavras, se o método chamado existe na classe filha ele será chamado, caso contrário o método será procurado na classe mãe.
-
-Quando definimos um método com a mesma assinatura na classe base e em alguma classe derivada, estamos aplicando o conceito de Reescrita de Método.
-
-#### Fixo + Específico
-
-Suponha que o preço de um serviço é a soma de um valor fixo mais um valor que depende do tipo
-do serviço. Por exemplo, o preço do serviço de empréstimo é 5 reais mais uma porcentagem do valor emprestado ao cliente. O preço do serviço de seguro de veículo é 5 reais mais uma porcentagem do valor do veículo segurado. Em cada classe específica, podemos reescrever o método `calculaTaxa()`.
-
-```java
-class Emprestimo extends Servico {
-    // ATRIBUTOS
-    public double calculaTaxa(){
-        return 5 + this.valor * 0.1;
-    }
-}
-```
-
-```java
-class SeguraDeVeiculo extends Servico {
-// ATRIBUTOS
-    public double calculaTaxa(){
-        return 5 + this.veiculo.getTaxa()* 0.05;
-    }
-}
-```
-
-Se o valor fixo dos serviços for atualizado, todas as classes específicas devem ser modificadas. Outra alternativa seria criar um método na classe `Servico` para calcular o valor fixo de todos os serviços e chamá-lo dos métodos reescritos nas classes específicas.
-
-```java
-class Servico {
-    public double calculaTaxa(){
-        return 5 ;
-    }
-}
-```
-
-```java
-class Emprestimo extends Servico {
-// ATRIBUTOS
-    public double calculaTaxa(){
-        return super.calculaTaxa()+ this.valor * 0.1;
-    }
-}
-```
-
-Dessa forma, quando o valor padrão do preço dos serviços é alterado, basta modificar o método
-na classe `Servico`.
-
 ## Construtores e Herança
 
 ### Construtor Padrão
@@ -863,6 +685,185 @@ class Aluno extends Pessoa {
 > **"Constructor Pessoa in class Pessoa cannot be applied to given types"**  
 
 Isso acontece porque o Java sempre tenta chamar `super()` implicitamente **se nenhum construtor da superclasse for especificado**. Como `Pessoa` não tem um construtor padrão, o compilador não consegue encontrar um construtor adequado para ser chamado automaticamente.
+
+
+## Sobrescrita de Métodos
+
+### Caelum
+
+[^caelumoo]
+
+Todo fim de ano, os funcionários do nosso banco recebem uma bonificação. Os funcionários comuns recebem 10% do valor do salário e os gerentes, 15%.
+
+Vamos ver como fica a classe Funcionario:
+
+```java
+class Funcionario {
+    protected String nome;
+    protected String cpf;
+    protected double salario;
+    public double getBonificacao() {
+        return this.salario * 0.10;
+    }
+    // métodos
+}
+```
+
+Se deixarmos a classe `Gerente` como ela está, ela vai herdar o método `getBonificacao`.
+
+```java
+Gerente gerente = new Gerente();
+gerente.setSalario(5000.0);
+IO.println(gerente.getBonificacao());
+```
+
+O resultado aqui será `500`. Não queremos essa resposta, pois o gerente deveria ter `750` de bônus nesse caso. Para consertar isso, uma das opções seria criar um novo método na classe Gerente, chamado, por exemplo, `getBonificacaoDoGerente`. O problema é que teríamos dois métodos em Gerente, confundindo bastante quem for usar essa classe, além de que cada um da uma resposta diferente.
+
+No Java, quando herdamos um método, podemos alterar seu comportamento. Podemos reescrever (reescrever, sobrescrever, override) este método:
+
+```java
+class Gerente extends Funcionario {
+    int senha;
+    int numeroDeFuncionariosGerenciados;
+    public double getBonificacao() {
+        return this.salario * 0.15;
+    }
+    // ...
+}
+```
+
+Agora o método está correto para o `Gerente`. Refaça o teste e veja que o valor impresso é o correto `750`:
+```java
+Gerente gerente = new Gerente();
+gerente.setSalario(5000.0);
+IO.println(gerente.getBonificacao());
+```
+
+:::tip  A anotação @Override
+Há como deixar explícito no seu código que determinador método é a reescrita de um método da sua classe mãe. Fazemos isso colocando `@Override` em cima do método. Isso é chamado **anotação**. Existem diversas anotações e cada uma vai ter um efeito diferente sobre seu código.
+
+```java
+@Override
+public double getBonificacao() {
+    return this.salario * 0.15;
+}
+```
+
+Perceba que, por questões de compatibilidade, isso não é obrigatório. Mas caso um método esteja anotado com `@Override`, ele necessariamente precisa estar reescrevendo um método da classe mãe.
+:::
+
+#### Invocando o método reescrito
+Depois de reescrito, não podemos mais chamar o método antigo que fora herdado da classe mãe: realmente alteramos o seu comportamento. Mas podemos invocá-lo no caso de estarmos dentro da classe.
+
+Imagine que para calcular a bonificação de um Gerente devemos fazer igual ao cálculo de um `Funcionario` porem adicionando R$ 1000. Poderíamos fazer assim:
+```java
+class Gerente extends Funcionario {
+    int senha;
+    int numeroDeFuncionariosGerenciados;
+    public double getBonificacao() {
+        return this.salario * 0.10 + 1000;
+    }
+    // ...
+}
+```
+
+Aqui teríamos um problema: o dia que o `getBonificacao` do `Funcionario` mudar, precisaremos mudar o método do `Gerente` para acompanhar a nova bonificação. Para evitar isso, o `getBonificacao` do `Gerente` pode chamar o do `Funcionario` utilizando a palavra chave **super**.
+
+```java
+class Gerente extends Funcionario {
+    int senha;
+    int numeroDeFuncionariosGerenciados;
+    public double getBonificacao() {
+        return super.getBonificacao() + 1000;
+    }
+    // ...
+}
+```
+
+Essa invocação vai procurar o método com o nome `getBonificacao` de uma super classe de `Gerente`. No caso ele logo vai encontrar esse método em `Funcionario`.
+
+Essa é uma prática comum, pois muitos casos o método reescrito geralmente faz "algo a mais" que o método da classe mãe. Chamar ou não o método de cima é uma decisão sua e depende do seu problema. Algumas vezes não faz sentido invocar o método que reescrevemos.
+
+### K19
+
+[^k19oo]
+
+Suponha que o valor da taxa administrativa do serviço de empréstimo é diferente dos outros serviços, pois ele é calculado a partir do valor emprestado ao cliente. Como esta lógica é específica para o serviço de empréstimo, devemos acrescentar um método para implementar esse cálculo na classe `Emprestimo`.
+```java
+class Emprestimo extends Servico {
+    // ATRIBUTOS
+    public double calculaTaxaDeEmprestimo(){
+        return this.valor * 0.1;
+    }
+}
+```
+
+Para os objetos da classe `Emprestimo`, devemos chamar o método `calculaTaxaDeEmprestimo()`.
+Para todos os outros serviços, devemos chamar o método `calculaTaxa()`.
+
+Mesmo assim, nada impediria que o método `calculaTaxa()` fosse chamado em um objeto da
+classe `Emprestimo`, pois ela herda esse método da classe `Servico`. Dessa forma, existe o risco de alguém erroneamente chamar o método incorreto.
+
+Seria mais seguro "substituir" a implementação do método `calculaTaxa()` herdado da classe
+`Servico` na classe `Emprestimo`. Para isso, basta escrever o método `calculaTaxa()` também na classe `Emprestimo` com a mesma assinatura que ele possui na classe `Servico`.
+```java
+class Emprestimo extends Servico {
+    // ATRIBUTOS
+    public double calculaTaxa(){
+        return this.valor * 0.1;
+    }
+}
+```
+
+Os métodos das classes específicas têm prioridade sobre os métodos das classes genéricas. Em outras palavras, se o método chamado existe na classe filha ele será chamado, caso contrário o método será procurado na classe mãe.
+
+Quando definimos um método com a mesma assinatura na classe base e em alguma classe derivada, estamos aplicando o conceito de Reescrita de Método.
+
+#### Fixo + Específico
+
+Suponha que o preço de um serviço é a soma de um valor fixo mais um valor que depende do tipo
+do serviço. Por exemplo, o preço do serviço de empréstimo é 5 reais mais uma porcentagem do valor emprestado ao cliente. O preço do serviço de seguro de veículo é 5 reais mais uma porcentagem do valor do veículo segurado. Em cada classe específica, podemos reescrever o método `calculaTaxa()`.
+
+```java
+class Emprestimo extends Servico {
+    // ATRIBUTOS
+    public double calculaTaxa(){
+        return 5 + this.valor * 0.1;
+    }
+}
+```
+
+```java
+class SeguraDeVeiculo extends Servico {
+// ATRIBUTOS
+    public double calculaTaxa(){
+        return 5 + this.veiculo.getTaxa()* 0.05;
+    }
+}
+```
+
+Se o valor fixo dos serviços for atualizado, todas as classes específicas devem ser modificadas. Outra alternativa seria criar um método na classe `Servico` para calcular o valor fixo de todos os serviços e chamá-lo dos métodos reescritos nas classes específicas.
+
+```java
+class Servico {
+    public double calculaTaxa(){
+        return 5 ;
+    }
+}
+```
+
+```java
+class Emprestimo extends Servico {
+// ATRIBUTOS
+    public double calculaTaxa(){
+        return super.calculaTaxa()+ this.valor * 0.1;
+    }
+}
+```
+
+Dessa forma, quando o valor padrão do preço dos serviços é alterado, basta modificar o método
+na classe `Servico`.
+
 
 ## Proibindo Herança
 

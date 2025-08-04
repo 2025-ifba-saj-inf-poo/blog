@@ -83,3 +83,4 @@ rectangle "Morcego" #palegreen;line:green;text:green{
 <figcaption>Criando um objeto Morcego.</figcaption>
 </figure>
 
+<!-- @include: ../../../includes/bib.md -->
