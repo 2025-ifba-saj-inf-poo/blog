@@ -30,8 +30,6 @@ adaptado de [^Takenami]
 
 1. Escreva o diagrama UML da classe Aparelho de DVD e implemente o código em Java para construir 1 Aparelho de DVD e 3 filmes diferentes, utilizando o construtor e os métodos definidos e inserir um filme no Aparelho de DVD, ligar, dar play e remover o filme.
 
-<div style="display:none">
-
 ::: details 
 
   <figure>
@@ -47,6 +45,10 @@ adaptado de [^Takenami]
       void ligar()
       void desligar()
       void inserirFilme(Filme filme)
+      void play()
+      void stop()
+      void aumentarVolume()
+      void diminuirVolume()
       Filme removerFilme()
   }
   class Filme{
@@ -71,6 +73,6 @@ adaptado de [^Takenami]
 
 :::
 
-</div>
+
 
 <!-- @include: ../../../includes/bib.md -->

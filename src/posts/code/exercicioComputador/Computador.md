@@ -1,0 +1,37 @@
+```plantuml {kroki=true}
+class Computador{
+    Memoria memoria 
+    Processador processador
+    HD hd
+    boolean ligado;
+    Computador(Memoria memoria,Processador processador,HD hd)
+
+    boolean ligar()
+    boolean desligar()
+    String instalarPrograma(String nome)
+    String exibirInformacoes()
+
+}
+
+class Memoria{
+    int capacidade
+    String tipo
+}
+
+class Processador{
+    String modelo
+    double velocidade
+}
+
+class HD{
+    int armazenamento
+    boolean ehSSD
+}
+```
+
+```java
+void main(){
+    Computador pc = new Computador()
+    System.out.println(pc.exibirInformacoes()))
+}
+```

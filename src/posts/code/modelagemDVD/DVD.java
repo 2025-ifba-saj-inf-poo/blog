@@ -17,19 +17,19 @@ Só é possível dar stop se o DVD estiver em play;
 Ao dar play deve aparecer o nome e a duração do filme que está sendo exibido.
 
  */
-public class AparelhoDVD {
-    public boolean ligado;
-    private int volume;
-    private Filme filme;
-    private boolean emPlay;
+class AparelhoDVD {
+    boolean ligado;
+    int volume;
+    Filme filme;
+    boolean emPlay;
     //Ao ser criado o DVD inicialmente está desligado. Seu volume pode alterar de 1 a 5 sendo que o nível inicial é 2.
-    public AparelhoDVD(){
+    AparelhoDVD(){
         ligado = false;
         volume = 2;
         emPlay = false;
     }
     //Seu volume pode alterar de 1 a 5 
-    public void aumentarVolume(){
+    void aumentarVolume(){
         if(ligado){
             if(volume<5){
                 volume++;
@@ -37,17 +37,14 @@ public class AparelhoDVD {
         }
     }
     //Seu volume pode alterar de 1 a 5 
-    public void diminuirVolume(){
+    void diminuirVolume(){
         if(ligado && volume>1){
             volume--;
         }
     }
+
     //método de acesso
-    public int getVolume() {
-        return volume;
-    }
-    //método de acesso
-    public void setVolume(int volume) {
+    void setVolume(int volume) {
         if(ligado){
             if(this.volume<=5 && this.volume>=1){
                 this.volume=volume;
@@ -56,14 +53,14 @@ public class AparelhoDVD {
     }
 
     //É possível inserir um filme no DVD. 
-    public void inserirFilme(Filme filme){
+    void inserirFilme(Filme filme){
         if(ligado){
             if(this.filme==null){
                 this.filme = filme;
             }
         }
     }
-    public Filme removerFilme(){
+    Filme removerFilme(){
         stop();
         Filme filmeRemovido = this.filme;
         this.filme = null;
@@ -71,16 +68,16 @@ public class AparelhoDVD {
     }
 
     //ligar e desligar;
-    public void ligar(){
+    void ligar(){
         ligado = true;
     }
-    public void desligar(){                
+    void desligar(){                
         ligado = false;
     }
     //play e stop.
     //Só é possível dar play no DVD se existir algum filme inserido
     //Ao dar play deve aparecer o nome e a duração do filme que está sendo exibido.
-    public String play(){
+    String play(){
         if(ligado){
             if(filme!= null){
                 emPlay = true;
@@ -90,7 +87,7 @@ public class AparelhoDVD {
         return null;
     }
     //Só é possível dar stop se o DVD estiver em play;
-    public void stop(){
+    void stop(){
         if(ligado){
             if(emPlay){
                 emPlay = false;
@@ -98,14 +95,14 @@ public class AparelhoDVD {
         }
     }
     @Override
-    public String toString() {
+    String toString() {
         return "AparelhoDVD [ligado=" + ligado + ", volume=" + volume + ", filme=" + filme + ", emPlay=" + emPlay + "]";
     }
 
-    public boolean isLigado() {
+    boolean isLigado() {
         return ligado;
     }
-    public void setLigado(boolean ligado) {
+    void setLigado(boolean ligado) {
         this.ligado = ligado;
     }    
 }

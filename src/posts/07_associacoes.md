@@ -23,21 +23,21 @@ order: 7
 @startuml
 
 class Carro{
-    - String cor
-    - String marca
-    - String velocidade
-    - Motor motor
-    + Carro(String cor, String marca, Motor motor)
-    + void acelerar()
-    + void parar()
+    String cor
+    String marca
+    int velocidade
+    Motor motor
+    Carro(String cor, String marca, Motor motor)
+    void acelerar()
+    void parar()
 }
 
 class Motor{
-    - int cavalos
-    - int rotacoes
-    + void diminuirGiros()
-    + void aumentarGiros()
-    + int trabalhoDoMoror()
+    int cavalos
+    int rotacoes
+    void diminuirGiros()
+    void aumentarGiros()
+    int trabalhoDoMoror()
 }
 
 Carro -> Motor 
