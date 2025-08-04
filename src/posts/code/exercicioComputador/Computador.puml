@@ -1,11 +1,10 @@
-```plantuml {kroki=true}
+```plantuml  {kroki=true}
 class Computador{
     Memoria memoria 
     Processador processador
     HD hd
     boolean ligado;
     Computador(Memoria memoria,Processador processador,HD hd)
-
     boolean ligar()
     boolean desligar()
     String instalarPrograma(String nome)
@@ -27,6 +26,10 @@ class HD{
     int armazenamento
     boolean ehSSD
 }
+
+Computador <-- HD
+Computador <-- Processador
+Computador <-- Memoria
 ```
 
 ```java
