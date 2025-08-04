@@ -1,4 +1,4 @@
-package modelagemDVD;
+package modelagemDVD.estante;
 
 /*
 Utilizando os conhecimentos de O.O. construa um programa utilizando as informações abaixo. As características de um DVD devem ser definidas de acordo com as informações a seguir. Ao ser criado o DVD inicialmente está desligado. Seu volume pode alterar de 1 a 5 sendo que o nível inicial é 2. É possível inserir um filme no DVD. O filme possui as seguintes caraterísticas: nome, categoria e duração.
@@ -36,19 +36,18 @@ class AparelhoDVD {
             }
         }
     }
+    public void setVolume(int volume) {
+        if(ligado){
+            if(volume>=1 && volume<=5){
+                this.volume = volume;
+            }
+        }
+    }
+
     //Seu volume pode alterar de 1 a 5 
     void diminuirVolume(){
         if(ligado && volume>1){
             volume--;
-        }
-    }
-
-    //método de acesso
-    void setVolume(int volume) {
-        if(ligado){
-            if(this.volume<=5 && this.volume>=1){
-                this.volume=volume;
-            }
         }
     }
 
@@ -95,7 +94,7 @@ class AparelhoDVD {
         }
     }
     @Override
-    String toString() {
+    public String toString() {
         return "AparelhoDVD [ligado=" + ligado + ", volume=" + volume + ", filme=" + filme + ", emPlay=" + emPlay + "]";
     }
 

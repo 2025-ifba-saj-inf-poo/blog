@@ -1,4 +1,4 @@
-package modelagemDVD;
+package modelagemDVD.estante;
 /*
 O filme possui as seguintes caraterísticas: nome, categoria e duração.
  */
@@ -27,8 +27,5 @@ class Filme {
     String toString() {
         return "Filme [nome=" + nome + ", categoria=" + categoria + ", duracao=" + duracao + "]";
     }
-
-    
-
     
 }
