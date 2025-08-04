@@ -104,5 +104,5 @@ Neste exercício:
 ## Entrega
 
 
-2A
-2B
+[2A](https://classroom.github.com/a/OYupSAp4)
+[2B](https://classroom.github.com/a/-bbliGIv)

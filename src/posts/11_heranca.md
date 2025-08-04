@@ -768,6 +768,26 @@ end ref
 </figure>
 
 
+<figure>
+
+```plantuml
+@startuml Criando um objeto a partir da subclasse
+
+label "new Emprestimo()"
+
+rectangle "Emprestimo" #palegreen;line:green;text:green{
+label "..." #palegreen;text:green
+rectangle "Servico" #aliceblue;line:blue;text:blue{
+label "..." #aliceblue;text:blue   
+}
+} 
+
+@enduml
+```
+
+<figcaption>Criando a parte Servico antes de construir a parte Emprestimo.</figcaption>
+</figure>
+
 ### Construtores com Parâmetros  
 
 Construtores com parâmetros são utilizados para inicializar os atributos de um objeto no momento da criação. Se uma classe filha definir um construtor, ela deve chamar explicitamente o construtor da superclasse usando `super()` para garantir que a inicialização da classe base ocorra corretamente.

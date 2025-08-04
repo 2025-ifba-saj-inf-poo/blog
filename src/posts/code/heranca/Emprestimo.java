@@ -22,9 +22,10 @@ public class Emprestimo extends Servico {
 
     public static void main(String[] args) {
         Cliente c1  = new Cliente();
-        Funcionario f1 = new Funcionario();
+        Funcionario f1 = new Funcionario("Leandro F", "0000000000", 100);
         LocalDate data = LocalDate.of(2022,2,25);
         Emprestimo e = new Emprestimo(c1, f1, data, 10000, 1);
         IO.println(e);
+
     }
 }

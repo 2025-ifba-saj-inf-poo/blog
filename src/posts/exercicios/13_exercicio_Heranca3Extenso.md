@@ -48,5 +48,5 @@ Analisando o processo de conversão de um numero inteiro para o seu corresponden
 ## Link
 
 
-2A
-2B
+[2A](https://classroom.github.com/a/5DUxf59K)
+[2B](https://classroom.github.com/a/bfR0K1pr)
