@@ -80,16 +80,14 @@ hide circle
 
 Neste exercício: 
 1. Represente por meio de classes Java a hierarquia de classificação que envolve homem, cão e mosca na taxonomia de Lineu; 
-1. <s>Em sua modelagem verifique se faz sentido todas as classes serem concretas ou se é preciso definir alguma(s) delas como abstrata(s);</s>
-1. Implemente o método `String toString()` em `Animalia` e sobreescreva este método em toda subclasse, de modo que quando invocado retornará toda a taxonomia de uma dada instância, por exemplo, para uma instância de Homo sapiens seria: 
+1. Implemente o método `String toString()` em `Animalia` e sobreescreva este método em toda subclasse (lembre-se do `super`), de modo que quando invocado retornará toda a taxonomia de uma dada instância, por exemplo, para uma instância de Homo sapiens seria: 
 
-    ```java
-    public class Principal{
-        public static void main(String[] args) {
-            System.out.println(new HomoSapiens());
-        }
-    }
-    ```
+    @[code](./code/taxonomia/Animalia.java)
+    
+    @[code](./code/taxonomia/Chordata.java)
+    
+    @[code](./code/taxonomia/Principal.java)
+    
     ```shell
     Reino Animalia 
     Filo Chordata
@@ -99,7 +97,7 @@ Neste exercício:
     Gênero Homo 
     Espécie Homo sapiens 
     ```
-1. Reescreva seu código, mantendo o mesmo comportamento, mas sem utilizar herança <s>(Será necessário alterar a classe `Principial`)</s>.
+
 
 ## Entrega
 
@@ -107,6 +105,9 @@ Neste exercício:
 [2A](https://classroom.github.com/a/OYupSAp4)
 [2B](https://classroom.github.com/a/-bbliGIv)
 
+
 ## Referencias
+
+
 
 <!-- @include: ../../../includes/bib.md -->

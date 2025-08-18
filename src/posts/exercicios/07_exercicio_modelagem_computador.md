@@ -32,3 +32,5 @@ order: 8
   
 Desenhe o diagrama UML das classes envolvidas e implemente o código em Java (main) para criar pelo menos dois computadores. Cada computador deve está com configurações diferentes de memória, processador e HD. Todos os métodos do computador só devem funcionar se o computador estiver completo (com todos os componentes) e para `instalarPrograma` o computado deve estar ligado. 
 
+
+<!-- @include: ../code/exercicioComputador/Computador.puml -->
