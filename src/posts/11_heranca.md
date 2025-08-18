@@ -5,7 +5,7 @@ tag:
   - heranca
 category:
   - aula
-order: 17
+order: 12
 ---
 # Herança
 
