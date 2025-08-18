@@ -184,10 +184,10 @@ Observe que não estamos apenas chamando o método, mas também fazendo algo no 
 Agora temos o valor de retorno do método na variável `worm`. Se não houver nenhuma minhoca nos tocando, esta variável conterá o valor especial `null`. Só podemos remover o `worm` quando houver um `worm`, portanto, precisamos verificar se o `worm` não possui o valor especial `null` antes de remover:
 
 ```java
-    if (worm){
+    if (worm!=null){
       World world;
       world = getWorld();
-      world.removeObject(worm)
+      world.removeObject(worm);
     }
 ```
 
@@ -206,7 +206,7 @@ public void act(){
   }
   Actor worm;
   worm = getOneObjectAtOffset(0,0, Worm.class);
-  if (worm){
+  if (worm!=null){
     World world;
     world = getWorld();
     world.removeObject(worm)
@@ -240,7 +240,7 @@ public void moveAndTurn(){
 public void eat(){
   Actor worm;
   worm = getOneObjectAtOffset(0,0, Worm.class);
-  if (worm){
+  if (worm!=null){
     World world;
     world = getWorld();
     world.removeObject(worm);
@@ -270,7 +270,7 @@ Podemos adicionar algum som ao nosso cenário. O cenário vem com um som pronto 
 public void eat(){
   Actor worm;
   worm = getOneObjectAtOffset(0,0, Worm.class);
-  if (worm){
+  if (worm!=null){
     World world;
     world = getWorld();
     world.removeObject(worm);
@@ -319,3 +319,50 @@ Esse código significa que giraremos uma quantidade aleatória a cada quadro, en
 No momento, nossa lagosta gira a cada quadro, o que a faz girar em vez de vagar. Há algumas maneiras diferentes de fazê-la girar com menos frequência. Uma seria ter uma variável de contador que registrasse quanto tempo se passou desde a última vez que giramos, e girasse, digamos, a cada 10 quadros. Outra maneira é usar o gerador de números aleatórios para girar aleatoriamente, com uma determinada média (por exemplo, a cada 10 quadros). Usaremos outro uso do gerador aleatório, pois ele torna a lagosta menos previsível.
 
 Digamos que uma lagosta tenha 10% de chance de virar a cada quadro. Podemos codificar isso comparando Greenfoot.getRandomNumber(100) a uma determinada porcentagem:
+
+```java
+public void moveAndTurn(){
+  move(4);
+  if(Greenfoot.getRandomNumber(100) < 10){
+    turn(Greenfoot.getRandomNumber(90));
+  }
+}
+```
+
+Se você estiver interessado, pense cuidadosamente sobre como isso funciona — por que usamos < em vez de <=? Poderíamos ter codificado de forma diferente, por exemplo, usando Greenfoot.getRandomNumber(50) ou Greenfoot.getRandomNumber(10)? E quanto a Greenfoot.getRandomNumber(5)?
+
+Isso fará com que nossa lagosta vire (em média) a cada 10 quadros. Compile e execute, e veja o que acontece. A lagosta deve andar principalmente em linha reta, ocasionalmente virando à direita em uma distância variável. Isso é ótimo, e nos leva de volta ao nosso outro problema: a lagosta sempre vira à direita.
+
+Sabemos, pelo nosso caranguejo, que a maneira de virar à esquerda é usar um número negativo para o ângulo. Se pudéssemos mudar a rotação da nossa lagosta de 0 a +90 para -45 a +45, isso resolveria o nosso problema. Existem algumas maneiras diferentes de fazer isso, mas aqui está a mais simples: observe que, se subtrairmos 45 do nosso número, obtemos um número na faixa correta. Então, vamos ajustar nosso código de acordo:
+
+
+```java
+public void moveAndTurn(){
+  move(4);
+  if(Greenfoot.getRandomNumber(100) < 10){
+    turn(Greenfoot.getRandomNumber(90)-45);
+  }
+}
+```
+
+Nossa amplitude de giro está perfeitamente simétrica no momento? Se não, como você poderia corrigir isso?
+
+Compile e execute isso, e teremos um predador relativamente eficaz que pode se voltar contra você a qualquer momento. Coloque um caranguejo, várias lagostas e muitas minhocas no mundo (e salve o mundo!) e tente comer todas as minhocas antes que as lagostas o peguem. Você pode notar, no entanto, que ainda há uma falha: as lagostas podem ficar presas por um tempo nas bordas do mundo. Isso ocorre porque, uma vez que atingem a borda do mundo, elas só se afastam depois de fazerem algumas curvas aleatórias.
+
+Podemos acelerar o processo de retirada das lagostas das paredes novamente, fazendo-as girar 180 graus assim que chegarem à borda do mundo. Podemos verificar se elas estão na borda do mundo observando se a coordenada X delas está próxima de zero ou próxima da largura do mundo — e uma lógica semelhante para a coordenada Y (e a altura do mundo). O código está abaixo:
+
+
+```java
+public void moveAndTurn(){
+  move(4);
+  if(Greenfoot.getRandomNumber(100) < 10){
+    turn(Greenfoot.getRandomNumber(90)-45);
+  }
+  if(getX() <=5 || getX() >= getWorld().getWidth() - 5){
+    turn(180);
+  }
+  if(getY() <=5 || getY() >= getWorld().getHeight() - 5){
+    turn(180);
+  }
+}
+```
