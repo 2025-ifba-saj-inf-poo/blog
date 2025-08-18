@@ -254,12 +254,13 @@ Se você comparar este código com a versão anterior, notará que, na verdade, 
 Vamos colocar um contador no Caranguejo. Declare um `int quantidade` como atributo privado e inicialize ele com 0. Cada vez que o Caranguejo comer uma Warm esse numero deve ser incrementado e mostrado com o código abaixo:
 
 ```java
-  
-  showText(String.valueOf(quantidade), 10, 10);
+  //...
+  private int quantidade = 0;
+  //...
+  world.showText(String.valueOf(quantidade), 10, 10);
+  //...
 
 ```
-
-
 
 ## Salvando o Mundo, Criando e Tocando Som
 
@@ -332,6 +333,94 @@ Pressione o botão de gravação e fale (ou amasse um pacote de comida vazio, ou
 O silêncio no final não é um grande problema, mas o silêncio no início é irritante — significa que, quando você diz para o som tocar quando uma minhoca é comida, parece haver um pequeno atraso antes que o som comece a tocar, como se o jogo estivesse travando. Você pode limpar o silêncio selecionando a parte do meio (a parte que você deseja manter) clicando no início (após o silêncio inicial) e arrastando para o final (antes do silêncio final) — a seleção deve ser exibida em cinza. Em seguida, pressione "Cortar para seleção". O silêncio deve ser removido.
 
 Salve o som digitando algo no campo de nome de arquivo (por exemplo, "myeating ") e clicando em Salvar. Feche o gravador de som e volte ao seu código. Encontre a linha com "eating.wav" e altere-a para "myeating.wav" (ou qualquer nome que você tenha usado, mais a extensão .wav). Assim, ao jogar, você deverá ouvir seu próprio som. Estamos quase terminando o jogo, mas precisamos adicionar um inimigo.
+
+### Criando um jogo com 2 jogadores
+
+Vamos colocar a Lagosta para disputar com o Caranguejo. 
+
+Crie uma nova classe `Lobster` com o mesmo código fonte do `Crab`.
+
+Para a movimentação o caranguejo utiliza as teclas da esquerda e da direita do teclado, na lagosta vamos mudar para <kbd>Q</kbd> e <kbd>W</kbd>.
+
+```java
+public void moveAndTurn(){
+  move(4);
+  if (Greenfoot.isKeyDown("q")){
+    turn(-3);
+  }
+  if (Greenfoot.isKeyDown("w")){
+    turn(3);
+  }
+}
+```
+
+Para exibir o placar, vamos mudar para posicionar a variável `quantidade` no canto inferior direto do mundo.
+
+```java
+  world.showText(String.valueOf(quantidade), 550, 550);
+```
+Podemos agora adicionar uma Lagosta e ver quem consegue pegar mais minhocas.
+
+### Usando Herança
+
+```java
+public class Decapoda extends Actor
+{
+    private int quantidade = 0;
+    private String keyLeft = "left";
+    private String keyRight = "right";
+    private int showTextX = 10;
+    private int showTextY = 10;
+    
+    public Decapoda(String keyLeft, String keyRight, int showTextX , int showTextY ){
+        this.keyLeft = keyLeft;
+        this.keyRight = keyRight;
+        this.showTextX = showTextX;
+        this.showTextY = showTextY;
+    }
+    
+    public void act(){
+      moveAndTurn();
+      eat();
+    }
+    public void moveAndTurn(){
+      move(4);
+      if (Greenfoot.isKeyDown(keyLeft)){
+        turn(-3);
+      }
+      if (Greenfoot.isKeyDown(keyRight)){
+        turn(3);
+      }
+    }
+    public void eat(){
+      Actor worm = getOneObjectAtOffset(0,0, Worm.class);
+      if (worm!=null){
+        getWorld().removeObject(worm);
+        quantidade++;
+        getWorld().showText(String.valueOf(quantidade), showTextX, showTextY);
+      }
+    }       
+}
+```
+
+```java
+public class Crab extends Decapoda
+{
+    public Crab(){
+        super("left","right",10,10);
+    }
+    
+}
+```
+
+```java
+public class Lobster extends Decapoda
+{
+    public Lobster(){        
+        super("q","w",550,550);        
+    }    
+}
+```
 
 ##  Adicionando um inimigo que se move aleatoriamente
 
