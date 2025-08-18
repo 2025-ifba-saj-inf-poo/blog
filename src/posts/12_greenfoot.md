@@ -260,7 +260,35 @@ A esta altura, você provavelmente já está cansado de ter que adicionar novos 
 
 ![Pop-up mundial crabworld salve o mundo](./img/world-popup-CrabWorld-save-the-world.png)
 
-Isso adiciona algum código à nossa classe `CrabWorld`, que criará as minhocas e o caranguejo e os adicionará ao mundo na mesma posição na próxima vez que você reiniciar ou compilar. Não vamos explorar o código em detalhes agora, mas se você estiver curioso, procure no código-fonte da classe `CrabWorld` que aparece. Quando terminar, você pode fechar a janela do código-fonte do `CrabWorld`.
+Isso adiciona algum código à nossa classe `CrabWorld`, que criará as minhocas e o caranguejo e os adicionará ao mundo na mesma posição na próxima vez que você reiniciar ou compilar. 
+
+```java
+    /**
+     * Constructor for objects of class CrabWorld.
+     * 
+     */
+    public CrabWorld()
+    {    
+        super(560, 560, 1); 
+        prepare();
+    }
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        addObject(new Crab(),169,151);
+        addObject(new Worm(),114,331);
+        addObject(new Worm(),252,269);
+    } 
+```
+
+Procure no código-fonte da classe `CrabWorld`.
+
+### Definindo o tamanho do mundo
+
+Para alterar o tamanho do mundo, você precisa modificar o construtor da classe `CrabWorld`. A linha `super(560, 560, 1);` define o tamanho do mundo. O primeiro parâmetro é a largura, o segundo é a altura e o terceiro é o tamanho da célula em pixels.
 
 ### Tocando e gravando sons
 
