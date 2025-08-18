@@ -1,9 +1,17 @@
 import { defineUserConfig } from "vuepress";
 import umlPlugin from 'markdown-it-plantuml';
 import table_captions from 'markdown-it-table-captions'
+import { copyPlusPlugin } from 'vuepress-plugin-copy-plus'
 import theme from "./theme.js";
 
 export default defineUserConfig({
+
+  plugins:[
+    copyPlusPlugin({
+      fileExtensions: ['zip', 'gfar']
+    })
+  ],
+
   base: "/blog/",
   head: [
     // Adiciona o CSS do Codapi
