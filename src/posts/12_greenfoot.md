@@ -249,6 +249,17 @@ public void eat(){
 ```
 Se você comparar este código com a versão anterior, notará que, na verdade, não alteramos nem removemos nada do código existente. Movemos a metade superior para um novo método chamado `moveAndTurn` e a metade inferior para um novo método chamado `eat`. Em seguida, substituímos o conteúdo do método `act()` por chamadas para esses novos métodos. Isso tornará o código no qual nos concentraremos mais curto.
 
+### Mostrando o placar
+
+Vamos colocar um contador no Caranguejo. Declare um `int quantidade` como atributo privado e inicialize ele com 0. Cada vez que o Caranguejo comer uma Warm esse numero deve ser incrementado e mostrado com o código abaixo:
+
+```java
+  
+  showText(String.valueOf(quantidade), 10, 10);
+
+```
+
+
 
 ## Salvando o Mundo, Criando e Tocando Som
 
