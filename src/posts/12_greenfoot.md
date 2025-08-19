@@ -172,26 +172,21 @@ public void act(){
 }
 ```
 
-No final do método `act()`, vamos inserir algum código para verificar se o caranguejo está tocando uma minhoca. Usaremos o método `getOneObjectAtOffset`. Este método recebe três parâmetros. Os dois primeiros são o deslocamento (diferença) X e Y em relação à nossa posição atual. Queremos saber o que está diretamente abaixo de nós, então passaremos zero para ambos. O terceiro parâmetro nos permite indicar em qual classe estamos interessados; essa é a classe `Worm`:
+No final do método `act()`, vamos inserir algum código para verificar se o caranguejo está tocando uma minhoca. Usaremos o método `isTouching`. Este método recebe um parâmetro. O  parâmetro nos permite indicar em qual classe estamos interessados; essa é a classe `Worm`:
 
 ```java
-Actor worm;
-worm = getOneObjectAtOffset(0,0, Worm.class);
+if(isTouching(Worm.class)){
+
+}
 ```
 
-Observe que não estamos apenas chamando o método, mas também fazendo algo no lado esquerdo. Este método retorna algo (o objeto abaixo do caranguejo, se houver um), portanto, precisamos armazenar esse valor de retorno para que possamos usá-lo novamente. Para isso, declaramos uma variável (algo para armazenar valores) que chamamos de `worm` na linha anterior. Em seguida, usamos o operador de atribuição (um sinal de igual) para indicar que o valor de wor`m deve ser igual ao valor de retorno do método.
-
-Agora temos o valor de retorno do método na variável `worm`. Se não houver nenhuma minhoca nos tocando, esta variável conterá o valor especial `null`. Só podemos remover o `worm` quando houver um `worm`, portanto, precisamos verificar se o `worm` não possui o valor especial `null` antes de remover:
+Só podemos remover o `worm` quando houver um `worm`:
 
 ```java
-    if (worm!=null){
-      World world;
-      world = getWorld();
-      world.removeObject(worm);
+    if (isTouching(Worm.class)) {
+        removeTouching(Worm.class);
     }
 ```
-
-O `!=` é o operador "diferente de" em Java. Isso significa que só executaremos o código quando `worm` não for `null`. O código em questão busca obter uma referência ao mundo na variável, chamada de world, e instruí-la a remover o `worm` usando o método `removeObject`.
 
 Então, vamos fazer um teste. Compile, crie algumas minhocas e coloque-as no seu mundo, depois adicione um caranguejo, aperte _Run_ e use as teclas esquerda e direita para guiar o caranguejo até as minhocas, que devem ser comidas.
 
@@ -204,12 +199,8 @@ public void act(){
   if (Greenfoot.isKeyDown("right")){
     turn(3);
   }
-  Actor worm;
-  worm = getOneObjectAtOffset(0,0, Worm.class);
-  if (worm!=null){
-    World world;
-    world = getWorld();
-    world.removeObject(worm)
+  if (isTouching(Worm.class)) {
+      removeTouching(Worm.class);
   }
 }
 ```
@@ -238,12 +229,8 @@ public void moveAndTurn(){
   }
 }
 public void eat(){
-  Actor worm;
-  worm = getOneObjectAtOffset(0,0, Worm.class);
-  if (worm!=null){
-    World world;
-    world = getWorld();
-    world.removeObject(worm);
+  if (isTouching(Worm.class)) {
+      removeTouching(Worm.class);
   }
 }
 ```
@@ -308,14 +295,10 @@ Podemos adicionar algum som ao nosso cenário. O cenário vem com um som pronto 
 
 ```java
 public void eat(){
-  Actor worm;
-  worm = getOneObjectAtOffset(0,0, Worm.class);
-  if (worm!=null){
-    World world;
-    world = getWorld();
-    world.removeObject(worm);
-    Greenfoot.playSound("eating.wav");
-  }
+  if (isTouching(Worm.class)) {
+      removeTouching(Worm.class);
+      Greenfoot.playSound("eating.wav");
+  }  
 }
 ```
 Não se esqueça de ligar os alto-falantes (ou conectar os fones de ouvido). Uma última coisa: se você tiver um microfone no computador, pode gravar seus próprios sons. No menu Controles, há uma opção para exibir o gravador de som:
@@ -393,9 +376,10 @@ public class Decapoda extends Actor
       }
     }
     public void eat(){
-      Actor worm = getOneObjectAtOffset(0,0, Worm.class);
-      if (worm!=null){
-        getWorld().removeObject(worm);
+
+      if (isTouching(Worm.class)) {
+        removeTouching(Worm.class);
+        Greenfoot.playSound("eating.wav");
         quantidade++;
         getWorld().showText(String.valueOf(quantidade), showTextX, showTextY);
       }
