@@ -244,7 +244,7 @@ Vamos colocar um contador no Caranguejo. Declare um `int quantidade` como atribu
   //...
   private int quantidade = 0;
   //...
-  world.showText(String.valueOf(quantidade), 10, 10);
+  getWorld().showText(String.valueOf(quantidade), 10, 10);
   //...
 
 ```
@@ -337,14 +337,13 @@ public void moveAndTurn(){
 }
 ```
 
-Para exibir o placar, vamos mudar para posicionar a variável `quantidade` no canto inferior direto do mundo.
-
-```java
-  world.showText(String.valueOf(quantidade), 550, 550);
-```
 Podemos agora adicionar uma Lagosta e ver quem consegue pegar mais minhocas.
 
 ### Usando Herança
+
+Como o código de `Crab` e `Lobster` são muito parecidos, podemos reaproveitar boa parte do código. Isso é conhecido como herança. Vamos definir uma nova classe `Decapoda` que terá o que é comum a `Crab` e `Lobster`.
+
+
 
 ```java
 public class Decapoda extends Actor
@@ -386,6 +385,8 @@ public class Decapoda extends Actor
     }       
 }
 ```
+Agora vamos definir `Crab` e `Lobster` como filhas de `Decapoda`
+
 
 ```java
 public class Crab extends Decapoda
@@ -405,6 +406,10 @@ public class Lobster extends Decapoda
     }    
 }
 ```
+
+no Greenfoot vai ficar assim:
+
+![Herança no Greenfoot](./img/heranca.png)
 
 ##  Adicionando um inimigo que se move aleatoriamente
 
