@@ -413,23 +413,21 @@ no Greenfoot vai ficar assim:
 
 ##  Adicionando um inimigo que se move aleatoriamente
 
-Depois do nosso último tutorial, agora temos um cenário com um caranguejo que podemos controlar, que corre por aí comendo minhocas. O jogo é bem fácil — embora o caranguejo seja (deliberadamente) um pouco complicado de controlar, não há tensão. O que precisamos é de um inimigo que coma caranguejos: uma lagosta!
+Depois do nosso último tutorial, agora temos um cenário com um caranguejo que podemos controlar, que corre por aí comendo minhocas. O jogo é bem fácil — embora o caranguejo seja (deliberadamente) um pouco complicado de controlar, não há tensão. O que precisamos é de um inimigo que coma caranguejos: um **cavalo marinho**!
+Para começar, vamos adicionar um **cavalo marinho** que se move em linha reta e come caranguejos. Podemos fazer isso usando um código que já vimos como escrever. Primeiro, adicionamos uma classe `Lobster` — lembre-se de que fazemos isso clicando com o botão direito do mouse na classe Actor e selecionando a nova subclasse. Você encontrará a imagem do **cavalo marinho** na lista de imagens à esquerda.
 
-Para começar, vamos adicionar uma lagosta que se move em linha reta e come caranguejos. Podemos fazer isso usando um código que já vimos como escrever. Primeiro, adicionamos uma classe `Lobster` — lembre-se de que fazemos isso clicando com o botão direito do mouse na classe Actor e selecionando a nova subclasse. Você encontrará a imagem da lagosta na lista de imagens à esquerda.
+Depois de criar sua classe `Lobster`, você pode preenchê-la fazendo-o se mover em linha reta e comendo um caranguejo, se encontrar um. Você já viu como fazer cada uma dessas coisas em tutoriais anteriores, então não vou colar o código aqui diretamente. Tente você mesmo, mas se tiver dúvidas, pode ver a resposta aqui .
 
-Depois de criar sua classe `Lobster`, você pode preenchê-la fazendo-a se mover em linha reta e comendo um caranguejo, se encontrar um. Você já viu como fazer cada uma dessas coisas em tutoriais anteriores, então não vou colar o código aqui diretamente. Tente você mesmo, mas se tiver dúvidas, pode ver a resposta aqui .
 
-Você pode testar se a lagosta está funcionando colocando uma à esquerda de um caranguejo, clicando em "Executar" e deixando que ambas corram para o lado direito do mundo, onde o caranguejo será comido. (Se quiser, faça seu próprio som para quando a lagosta comer o caranguejo.) Isso é ótimo, mas nossa lagosta é bem burra; é fácil escapar dela movendo-se para o lado, e quando ela chega ao canto direito do mundo, ela fica lá para sempre (assim como nosso caranguejo original).
+Você pode testar se o **cavalo marinho** está funcionando colocando um à esquerda de um caranguejo, clicando em "Executar" e deixando que ambos corram para o lado direito do mundo, onde o caranguejo será comido. (Se quiser, faça seu próprio som para quando o **cavalo marinho** comer o caranguejo.) Isso é ótimo, mas nosso **cavalo marinho** é bem burro; é fácil escapar dele movendo-se para o lado, e quando ele chega ao canto direito do mundo, ele fica lá para sempre (assim como nosso caranguejo original).
 
-Vamos tornar nossa lagosta mais difícil de evitar introduzindo um pouco de aleatoriedade. O Greenfoot fornece uma função Greenfoot.getRandomNumber que fornecerá um número aleatório. Aqui está uma primeira tentativa, onde giramos uma quantidade aleatória a cada quadro:
-
+Vamos tornar nosso **cavalo marinho** mais difícil de evitar introduzindo um pouco de aleatoriedade. O Greenfoot fornece uma função Greenfoot.getRandomNumber que fornecerá um número aleatório. Aqui está uma primeira tentativa, onde giramos uma quantidade aleatória a cada quadro:
 
 ```java
 public void moveAndTurn(){
   move(4);
   turn(Greenfoot.getRandomNumber(90));
 }
-```
 
 Esse código significa que giraremos uma quantidade aleatória a cada quadro, entre 0 grau (inclusive) e 90 graus (exclusive). Experimente e veja como funciona. Você verá que isso não cria um inimigo muito ameaçador: a lagosta parece girar quase sempre no mesmo lugar (girando com muita frequência, na verdade) e sempre vira para a direita. Vamos corrigir esses problemas um por um, começando pelo giro no mesmo lugar.
 
