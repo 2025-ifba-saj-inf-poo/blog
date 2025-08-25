@@ -429,6 +429,7 @@ public void moveAndTurn(){
   move(4);
   turn(Greenfoot.getRandomNumber(90));
 }
+```
 
 Esse código significa que giraremos uma quantidade aleatória a cada quadro, entre 0 grau (inclusive) e 90 graus (exclusive). Experimente e veja como funciona. Você verá que isso não cria um inimigo muito ameaçador: a lagosta parece girar quase sempre no mesmo lugar (girando com muita frequência, na verdade) e sempre vira para a direita. Vamos corrigir esses problemas um por um, começando pelo giro no mesmo lugar.
 
