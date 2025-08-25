@@ -3,6 +3,7 @@ icon: edit
 date: 2025-08-11 8:01:00.00 -3
 tag:
   - heranca
+  - entrega
 category:
   - aula
 order: 13
@@ -486,5 +487,6 @@ public void moveAndTurn(){
 
 ## Entrega
 
-- [Link 2A](https://classroom.github.com/a/Zk1nSKQl)
-- [Link 2B](https://classroom.github.com/a/2cbb8wuE)
+[Link 2A](https://classroom.github.com/a/Zk1nSKQl)
+ 
+[Link 2B](https://classroom.github.com/a/2cbb8wuE)
