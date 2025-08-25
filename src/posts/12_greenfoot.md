@@ -486,4 +486,5 @@ public void moveAndTurn(){
 
 ## Entrega
 
-[Link 2B](https://classroom.github.com/a/2cbb8wuE)
+- [Link 2A](https://classroom.github.com/a/Zk1nSKQl)
+- [Link 2B](https://classroom.github.com/a/2cbb8wuE)
