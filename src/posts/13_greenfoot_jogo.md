@@ -5,7 +5,7 @@ tag:
   - greenfoot
   - jogo
 category:
-  - aula
+  - trabalho
 order: 14
 ---
 # Criando um Jogo no Estilo Hole.io
