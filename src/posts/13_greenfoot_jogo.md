@@ -275,4 +275,7 @@ A partir daqui, você pode expandir o jogo de várias maneiras:
 *   **Inimigos:** Adicione outros buracos controlados pelo computador que competem com você.
 *   **Condição de Vitória:** O jogo pode terminar quando todos os objetos forem engolidos.
 
-Este tutorial forneceu a base para um jogo divertido. Experimente, adicione suas próprias ideias e veja o que você pode criar!
+## Entrega
+
+[Link 2B](https://classroom.github.com/a/sNt8i8EX)
+
