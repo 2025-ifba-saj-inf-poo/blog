@@ -10,7 +10,7 @@ order: 14
 ---
 # Criando um Jogo no Estilo Hole.io
 
-Neste tutorial, vamos criar um jogo inspirado no popular "Hole.io". O objetivo é controlar um buraco que se move pelo mundo, engolindo objetos para crescer. Quanto maior o buraco fica, maiores os objetos que ele pode engolir.
+Neste tutorial, vamos criar um jogo inspirado no popular [Hole.io](https://holeio.com/). O objetivo é controlar um buraco que se move pelo mundo, engolindo objetos para crescer. Quanto maior o buraco fica, maiores os objetos que ele pode engolir.
 
 ## Configuração Inicial do Cenário
 
