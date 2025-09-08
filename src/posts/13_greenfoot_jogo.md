@@ -277,5 +277,6 @@ A partir daqui, você pode expandir o jogo de várias maneiras:
 
 ## Entrega
 
+[Link 2A](https://classroom.github.com/a/FeRfXnWQ)
 [Link 2B](https://classroom.github.com/a/sNt8i8EX)
 
