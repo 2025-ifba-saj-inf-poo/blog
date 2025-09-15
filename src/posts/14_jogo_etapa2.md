@@ -8,7 +8,7 @@ category:
   - trabalho
 order: 15
 ---
-### Exercício de Refatoração: Otimizando o Jogo "Hole.io" com Orientação a Objetos
+# Exercício de Refatoração: Otimizando o Jogo "Hole.io" com Orientação a Objetos
 
 **Objetivo:**
 
