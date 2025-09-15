@@ -260,8 +260,6 @@ Compile e execute. Você verá que o buraco pode engolir as pedras, mas não as 
 A partir daqui, você pode expandir o jogo de várias maneiras:
 *   **Adicionar mais objetos:** Crie classes para carros, prédios, etc., cada um com um `objectSize` diferente.
 *   **Pontuação:** Adicione um contador de pontos que aumenta a cada objeto engolido. Você pode exibir a pontuação na tela usando `world.showText()`.
-*   **Inimigos:** Adicione outros buracos controlados pelo computador que competem com você.
-*   **Condição de Vitória:** O jogo pode terminar quando todos os objetos forem engolidos.
 
 ## Entrega
 
