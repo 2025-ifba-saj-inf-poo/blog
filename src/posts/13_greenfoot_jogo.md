@@ -20,17 +20,15 @@ Primeiro, crie um novo cenário Java no Greenfoot. Vamos chamá-lo de "HoleIO".
 
 A primeira coisa que precisamos é de um mundo para o nosso jogo. Clique com o botão direito na classe `World` e selecione `new subclass`. Nomeie-a como `MyWorld`. Você pode escolher uma imagem de fundo para o seu mundo, como um asfalto ou grama. Para este exemplo, um fundo simples serve.
 
-No construtor da classe `MyWorld`, defina o tamanho do mundo. Um mundo de 800x600 pixels é um bom começo.
+No construtor da classe `MyWorld`, defina o tamanho do mundo. Um mundo de 800x800 pixels é um bom começo.
 
 ```java
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class MyWorld extends World
-{
-    public MyWorld()
-    {    
-        // Cria um novo mundo com 800x600 células com um tamanho de célula de 1x1 pixels.
-        super(800, 600, 1); 
+public class MyWorld extends World {
+    public MyWorld() {    
+        // Cria um novo mundo com 800x800 células com um tamanho de célula de 1x1 pixels.
+        super(800, 800, 1); 
     }
 }
 ```
@@ -54,15 +52,12 @@ Abra o editor da classe `Hole` e adicione o seguinte código ao método `act()`:
 ```java
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Hole extends Actor
-{
-    public void act()
-    {
+public class Hole extends Actor{
+    public void act(){
         followMouse();
     }
     
-    private void followMouse()
-    {
+    private void followMouse(){
         MouseInfo mouse = Greenfoot.getMouseInfo();
         
         if (mouse != null) {
@@ -91,11 +86,9 @@ Agora, precisamos popular nosso mundo com algumas pedras. Abra a classe `MyWorld
 ```java
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class MyWorld extends World
-{
-    public MyWorld()
-    {    
-        super(800, 600, 1); 
+public class MyWorld extends World{
+    public MyWorld(){    
+        super(800, 800, 1); 
         prepare();
     }
     
@@ -103,8 +96,7 @@ public class MyWorld extends World
      * Prepara o mundo para o início do programa.
      * Ou seja: cria os objetos iniciais e os adiciona ao mundo.
      */
-    private void prepare()
-    {
+    private void prepare(){
         for (int i = 0; i < 20; i++) {
             int x = Greenfoot.getRandomNumber(getWidth());
             int y = Greenfoot.getRandomNumber(getHeight());
@@ -131,30 +123,25 @@ public class Hole extends Actor
 {
     private int size = 50; // Tamanho inicial do buraco
 
-    public Hole()
-    {
+    public Hole(){
         updateImage();
     }
 
-    public void act()
-    {
+    public void act(){
         followMouse();
         eat();
     }
     
-    private void followMouse()
-    {
+    private void followMouse(){
         MouseInfo mouse = Greenfoot.getMouseInfo();
         if (mouse != null) {
             setLocation(mouse.getX(), mouse.getY());
         }
     }
     
-    private void eat()
-    {
-        Actor rock = getOneIntersectingObject(Rock.class);
-        if (rock != null) {
-            getWorld().removeObject(rock);
+    private void eat(){
+        if (isTouching(Rock.class)) {
+            removeTouching(Rock.class);
             size += 5; // Aumenta o tamanho
             updateImage();
             Greenfoot.playSound("eating.wav"); // Reutilizando o som do tutorial anterior
@@ -172,8 +159,8 @@ public class Hole extends Actor
 
 **O que há de novo:**
 *   `private int size = 50;`: Uma variável para rastrear o tamanho do nosso buraco.
-*   `getOneIntersectingObject(Rock.class)`: Este método verifica se o `Hole` está tocando em algum objeto da classe `Rock`. Se estiver, ele retorna o objeto; caso contrário, retorna `null`.
-*   `getWorld().removeObject(rock)`: Se um objeto `Rock` for encontrado, ele é removido do mundo.
+*   `isTouching(Rock.class)`: Este método verifica se o `Hole` está tocando em algum objeto da classe `Rock`. Retorna `true` se estiver tocando, e `false` caso contrário.
+*   `removeTouching(Rock.class)`: Se o `Hole` estiver tocando um `Rock`, este método remove o objeto `Rock` do mundo. É uma forma conveniente de combinar a detecção e a remoção.
 *   `size += 5;`: A cada pedra engolida, aumentamos a variável `size`.
 *   `updateImage()`: Criamos um novo método para atualizar a imagem do buraco. Ele carrega a imagem original, redimensiona-a para o novo `size` e a aplica ao ator. Chamamos este método no construtor para definir o tamanho inicial e sempre que o buraco cresce.
 
@@ -234,25 +221,26 @@ Agora, atualize o método `eat()` na classe `Hole`:
 ```java
 private void eat()
 {
-    Swallowable item = (Swallowable) getOneIntersectingObject(Swallowable.class);
-    
-    if (item != null && this.size > item.objectSize) {
-        getWorld().removeObject(item);
-        size += 5;
-        updateImage();
-        Greenfoot.playSound("eating.wav");
+    if (isTouching(Swallowable.class)) {
+        Swallowable item = (Swallowable) getOneIntersectingObject(Swallowable.class);
+        if (item!=null && this.size > item.objectSize) {
+            getWorld().removeObject(item);
+            size += 5;
+            updateImage();
+            Greenfoot.playSound("eating.wav");
+        }
     }
 }
 ```
 **Mudanças:**
-*   Agora procuramos por qualquer objeto da classe `Swallowable`.
-*   A condição `if` agora tem uma segunda parte: `this.size > item.objectSize`. Isso verifica se o tamanho do buraco (`this.size`) é maior que o tamanho do item que ele está tentando engolir.
+*   Utilizamos `isTouching(Swallowable.class)` para verificar se estamos tocando em um objeto que pode ser engolido.
+*   Em seguida, usamos `getOneIntersectingObject(Swallowable.class)` para obter a referência do objeto e poder verificar seu tamanho.
+*   A condição `if` continua verificando se o tamanho do buraco (`this.size`) é maior que o tamanho do item que ele está tentando engolir (`item.objectSize`).
 
 Finalmente, adicione algumas árvores ao seu mundo no método `prepare()` da classe `MyWorld`:
 
 ```java
-private void prepare()
-{
+private void prepare(){
     // Adiciona 20 pedras
     for (int i = 0; i < 20; i++) {
         addObject(new Rock(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(getHeight()));
@@ -279,4 +267,3 @@ A partir daqui, você pode expandir o jogo de várias maneiras:
 
 [Link 2A](https://classroom.github.com/a/FeRfXnWQ)
 [Link 2B](https://classroom.github.com/a/sNt8i8EX)
-
