@@ -1,16 +1,15 @@
 import { defineUserConfig } from "vuepress";
 import umlPlugin from 'markdown-it-plantuml';
 import table_captions from 'markdown-it-table-captions'
-import { copyPlusPlugin } from 'vuepress-plugin-copy-plus'
+import { upmathPlugin } from './plugins/upmath.js'
 import theme from "./theme.js";
 
 export default defineUserConfig({
 
-  plugins:[
-    copyPlusPlugin({
-      fileExtensions: ['zip', 'gfar']
-    })
+  plugins:[    
+    upmathPlugin(),
   ],
+  
 
   base: "/blog/",
   head: [
