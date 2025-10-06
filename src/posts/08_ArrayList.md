@@ -181,30 +181,30 @@ aulas.forEach(aula -> {
 @startuml
 
 class  Cliente {
-  String  nome
-  int  codigo
-  List<Conta> contas
-  List<CartaoDeCredito> cartoes
+  -String  nome
+  -int  codigo
+  -List<Conta> contas
+  -List<CartaoDeCredito> cartoes
 }
 
 class  CartaoDeCredito {
-  int  numero
-  String  dataDeValidade
-  Cliente cliente
-  Conta conta
+  -int numero
+  -LocalDate  dataDeValidade
+  -Cliente cliente
+  -Conta conta
 }
 
 class Agencia{
-  int numero
-  List<Conta> contas
+  -int numero
+  -List<Conta> contas
 }
 
 class Conta{
-  int numero
-  Cliente titular
-  double saldo
-  double limite
-  Agencia agencia
+  -int numero
+  -Cliente titular
+  -double saldo
+  -double limite
+  -Agencia agencia
 
 }
 
