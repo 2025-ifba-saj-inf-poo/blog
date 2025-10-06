@@ -172,7 +172,57 @@ aulas.forEach(aula -> {
 ::: 
 
 
+## Associações com listas
 
+
+<figure>
+
+```plantuml {kroki}
+@startuml
+
+class  Cliente {
+  String  nome
+  int  codigo
+  List<Conta> contas
+  List<CartaoDeCredito> cartoes
+}
+
+class  CartaoDeCredito {
+  int  numero
+  String  dataDeValidade
+  Cliente cliente
+  Conta conta
+}
+
+class Agencia{
+  int numero
+  List<Conta> contas
+}
+
+class Conta{
+  int numero
+  Cliente titular
+  double saldo
+  double limite
+  Agencia agencia
+
+}
+
+Conta --> Agencia : agencia
+Agencia --> Conta : contas
+CartaoDeCredito --> Cliente : cliente
+Cliente -> CartaoDeCredito : cartoes
+Cliente --> Conta : contas 
+Conta --> Cliente : titular
+CartaoDeCredito --> Conta : conta
+
+
+ 
+@enduml  
+```
+
+<figcaption> UML de classes do domínio bancários com Associações.</figcaption>
+</figure>
 
 
 ## Referências

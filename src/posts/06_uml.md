@@ -132,6 +132,8 @@ class Conta{
 <figcaption> UML de classes do domínio bancários.</figcaption>
 </figure>
 
+
+
 ## Exercícios
 
 - [Exercício UML](exercicios/04_exercicio_modelagem_tv.md)
