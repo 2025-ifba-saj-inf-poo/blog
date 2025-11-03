@@ -37,6 +37,38 @@ order: 15
 ## **Sistema de Loja de Roupas**
    Crie um sistema para gerenciar uma loja de roupas. A loja tem vários departamentos, como roupas masculinas, femininas e infantis. Cada departamento contém vários produtos (roupas) com informações como preço, tamanho e cor. Os clientes podem adicionar produtos ao carrinho de compras e finalizar suas compras. Implemente funcionalidades para calcular o total das compras e listar os produtos em um carrinho.
 
+   ```plantuml{kroki}
+
+   class Carrinho{
+      - List<Produto> listaProduto
+      - Cliente cliente
+      + Carrinho(Cliente cliente)
+      + float getTotal()
+   }
+   class Departamento{
+      - String nome
+      - List<Produto> listaProduto
+      + Departamento(String nome)
+   }
+   class Produto{
+      - Departamento departamento
+      - String nome
+      - float preco
+      + Produto(Departamento departamento, String nome,float preco)
+   }
+   class Cliente{
+      - int id
+      - String nome
+      - List<Carrinho> listaCarrinho
+      + Cliente(int id,String nome)
+   }
+
+   Cliente --> Carrinho : listaCarrinho
+   Carrinho --> Cliente : cliente
+   Carrinho --> Produto : listaProduto
+   Produto --> Departamento : departamento
+   ```
+
 ## **Sistema de Reservas de Hotéis**
    Desenvolva um sistema de reservas de hotéis. Cada hotel possui vários quartos, e cada quarto tem diferentes categorias, como luxo, padrão, suíte, etc. Os clientes podem fazer reservas para datas específicas e escolher um tipo de quarto. O sistema deve rastrear a disponibilidade de quartos e calcular o preço total da reserva com base na categoria do quarto e no número de noites.
 
