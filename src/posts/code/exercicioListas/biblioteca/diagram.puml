@@ -1,0 +1,26 @@
+@startuml
+class Livro{
+    - String titulo
+    - int publicacao
+    - List<Autor> autores
+    - List<Categoria> categorias
+    + Livro(String titulo, int publicacao, List<Autor> autores, List<Categoria> categorias)
+}
+class Autor{
+    - String nome
+    - List<Livro> livros
+    + Autor (String nome)
+    + void addLivro(Livro livro)
+}
+class Categoria{
+    - String nome
+    - List<Livro> livros
+    + Categoria (String nome)
+    + void addLivro(Livro livro)
+}
+
+Livro --> Autor : autores
+Livro --> Categoria : categorias
+Autor --> Livro : livros
+Categoria --> Livro : livros
+@enduml

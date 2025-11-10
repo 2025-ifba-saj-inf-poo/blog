@@ -205,6 +205,7 @@ class Conta{
   -double saldo
   -double limite
   -Agencia agencia
+  -List<CartaoDeCredito> cartoes
 
 }
 
@@ -215,6 +216,7 @@ Cliente -> CartaoDeCredito : cartoes
 Cliente --> Conta : contas 
 Conta --> Cliente : titular
 CartaoDeCredito --> Conta : conta
+Conta --> CartaoDeCredito  : cartoes
 
 
  

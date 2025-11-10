@@ -14,11 +14,25 @@ order: 15
 ## **Biblioteca Digital**
    Crie um sistema de biblioteca digital com livros, autores e categorias. Os livros pertencem a autores, e cada livro pode ser classificado em uma ou mais categorias. Os usuários podem fazer pesquisas por autor ou categoria e visualizar os livros disponíveis.
 
+
+   <figure>
+
+   <!-- @include: ../code/exercicioListas/biblioteca/diagram.puml -->
+
+   <figcaption>UML Gerenciamento de Biblioteca</figcaption>
+   </figure>
+
+
 ## **Gerenciamento de Escola**
    Desenvolva um programa para gerenciar informações de uma escola. Cada escola contém várias turmas, cada turma tem vários alunos e professores. Os alunos podem pertencer a mais de uma turma. Os professores ministram aulas em uma ou mais turmas. Os dados devem ser organizados para permitir consultas sobre quais turmas um professor leciona e quais alunos estão matriculados em uma turma específica.
+   
+
+   <figure>
 
    <!-- @include: ../code/exercicioListas/turmas/diagram.puml -->
 
+   <figcaption>UML Gerenciamento de Escola</figcaption>
+   </figure>
    
    @[code](../code/exercicioListas/turmas/Escola.java)
    
