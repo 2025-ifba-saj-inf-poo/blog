@@ -5,7 +5,6 @@ tag:
   - exception
 category:
   - exercicio
-  - entrega
 ---
 
 # Exercícios sobre Exception (IllegalArgumentException, SaldoInsufucienteException)
