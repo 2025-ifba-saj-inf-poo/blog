@@ -1,6 +1,6 @@
 ---
 icon: edit
-date: 2025-11-17 18:00:00.00 -3
+date: 2025-11-24 18:00:00.00 -3
 tag:
   - exception
 category:
