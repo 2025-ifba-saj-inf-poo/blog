@@ -1,6 +1,6 @@
 ---
 icon: dumbbell
-date: 2025-11-17 19:00:00.00 -3
+date: 2025-11-24 19:00:00.00 -3
 tag:
   - exception
 category:
