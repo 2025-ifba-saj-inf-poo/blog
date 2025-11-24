@@ -6,7 +6,7 @@ tag:
   - polimorfismo
 category:
   - exercicio
-order: 16
+order: 17
 ---
 
 # Exercício Polimorfismo

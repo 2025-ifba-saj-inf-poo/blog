@@ -5,6 +5,7 @@ tag:
   - exception
 category:
   - exercicio
+order: 19
 ---
 
 # Exercícios sobre Exception (IllegalArgumentException, SaldoInsufucienteException)
