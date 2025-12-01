@@ -177,7 +177,7 @@ aulas.forEach(aula -> {
 
 <figure>
 
-```plantuml {kroki}
+```plantuml 
 @startuml
 
 class  Cliente {

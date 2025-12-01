@@ -1,13 +1,12 @@
 ---
 icon: print
-date: 2025-08-31 10:00:00.00 -3
+date: 2025-12-01 10:00:00.00 -3
 article: false
 index: false
 ---
 
 # Versão para Impressão
 
-<!-- @include: ./01_links_uteis.md -->
 <!-- @include: ./02_introducao.md -->
 <!-- @include: ./03_Codificando_JAVA.md -->
 <!-- @include: ./04_objeto_classe.md -->
@@ -21,3 +20,8 @@ index: false
 <!-- @include: ./12_greenfoot.md -->
 <!-- @include: ./13_greenfoot_jogo.md -->
 <!-- @include: ./14_jogo_etapa2.md -->
+<!-- @include: ./15_polimorfismo.md -->
+<!-- @include: ./16_abstratas_interface.md -->
+<!-- @include: ./17_Exceptions.md -->
+
+<!-- @include: ../../includes/bib.md -->

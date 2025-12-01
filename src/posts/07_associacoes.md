@@ -19,7 +19,7 @@ order: 7
     
 <figure>
 
-```plantuml {kroki}
+```plantuml 
 @startuml
 
 class Carro{
@@ -57,7 +57,7 @@ Carro -> Motor
 
 <figure>
 
-```plantuml {kroki}
+```plantuml 
 @startuml
 
 class Produto{
@@ -85,7 +85,7 @@ Produto -o Fornecedor
 
 <figure>
 
-```plantuml {kroki}
+```plantuml 
 @startuml
 
 class ItemCompra{

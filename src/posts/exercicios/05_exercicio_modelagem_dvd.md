@@ -34,7 +34,7 @@ adaptado de [^Takenami]
 
   <figure>
 
-  ```plantuml {kroki}
+  ```plantuml 
   @startuml
   class AparelhoDVD{
       boolean ligado

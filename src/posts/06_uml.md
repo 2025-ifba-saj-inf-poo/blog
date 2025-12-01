@@ -12,7 +12,7 @@ order: 6
 
 <figure>
 
-```plantuml {kroki}
+```plantuml 
 @startuml
 class NomeDaClasse{
     atributos
@@ -64,7 +64,7 @@ class Programa{
 
 <figure>
 
-```plantuml {kroki}
+```plantuml 
 @startuml
 class Carro {
 
@@ -103,7 +103,7 @@ O diagrama que representa a descrição das classes é o **Diagrama de Classes**
 
 <figure>
 
-```plantuml {kroki}
+```plantuml 
 @startuml
 
 class  Cliente {

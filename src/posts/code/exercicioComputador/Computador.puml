@@ -1,4 +1,4 @@
-```plantuml  {kroki=true}
+```plantuml
 class Computador{
     Memoria memoria 
     Processador processador
